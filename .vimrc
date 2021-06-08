@@ -4,7 +4,10 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" Better commenter
+" Theme
+Plugin 'whatyouhide/vim-gotham'
+Plugin 'jaredgorski/spacecamp'
+"Better commenter
 Plugin 'preservim/nerdcommenter'
 
 " Use git with project
@@ -28,6 +31,9 @@ Plugin 'shougo/deoplete.nvim'
 Plugin 'roxma/nvim-yarp'
 Plugin 'roxma/vim-hug-neovim-rpc'
 
+" Completions and Fixer
+Plugin 'dense-analysis/ale'
+
 " Nerd Tree
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'xuyuanp/nerdtree-git-plugin'
@@ -37,17 +43,21 @@ Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Check syntax errors
 Plugin 'scrooloose/syntastic'
 
-" Languages and frameworks support
-Plugin 'sheerun/vim-polyglot'
-
 " Show buffers
 Plugin 'zefei/vim-wintabs'
+
+" Rainbow brackets
+Plugin 'frazrepo/vim-rainbow'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 set number
 set nocompatible              " be iMproved, required
 filetype off                  " required
+
+colorscheme gotham
+" colorscheme spacecamp
 
 "" Enconding
 set encoding=utf-8
@@ -162,4 +172,35 @@ noremap <leader>x :bn<CR>
 noremap <leader>w :bn<CR>
 
 "" Close buffer
-noremap <leader>c :bd<CR>
+inoremap <leader>c :bd<CR>
+
+"" Vim Rainbow
+let g:rainbow_active = 1
+
+"" ALE
+let g:ale_lint_on_enter = 0
+let g:ale_fix_on_save = 0
+let g:ale_linters_explicit = 1
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+let g:ale_fixers = {
+\ 'php': ['php_cs_fixer'],
+\ 'javascript': ['eslint', 'prettier'],
+\ 'html': ['prettier'],
+\ 'css': ['prettier'],
+\ 'c': ['clang-format'],
+\ 'cpp': ['clang-format'],
+\}
+
+"PHP
+let g:ale_php_phpcs_executable='/home/arch/.config/composer/vendor/bin/phpcs'
+let g:ale_php_php_cs_fixer_executable='/home/arch/.config/composer/vendor/bin/php-cs-fixer'
+
+" HTML
+autocmd FileType html setlocal tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+" Python
+autocmd FileType python setlocal tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+" C
+autocmd FileType c setlocal tabstop=8 softtabstop=0 expandtab shiftwidth=8 smarttab
