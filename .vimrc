@@ -32,16 +32,13 @@ Plugin 'roxma/nvim-yarp'
 Plugin 'roxma/vim-hug-neovim-rpc'
 
 " Completions and Fixer
-Plugin 'dense-analysis/ale'
+Plugin 'scrooloose/syntastic'
 
 " Nerd Tree
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'preservim/nerdtree'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-
-" Check syntax errors
-Plugin 'scrooloose/syntastic'
 
 " Show buffers
 Plugin 'zefei/vim-wintabs'
@@ -142,17 +139,6 @@ let g:UltiSnipsEditSplit="vertical"
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 
-"" Syntatisc
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 "" NERDTree configuration
 let g:NERDTreeChDirMode=2
 let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$',     '__pycache__']
@@ -178,24 +164,37 @@ inoremap <leader>c :bd<CR>
 let g:rainbow_active = 1
 
 "" ALE
-let g:ale_lint_on_enter = 0
-let g:ale_fix_on_save = 0
-let g:ale_linters_explicit = 1
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '⚠️'
-let g:ale_fixers = {
-\ 'php': ['php_cs_fixer'],
-\ 'javascript': ['eslint', 'prettier'],
-\ 'html': ['prettier'],
-\ 'css': ['prettier'],
-\ 'c': ['clang-format'],
-\ 'cpp': ['clang-format'],
-\}
+" let g:ale_lint_on_enter = 0
+" let g:ale_fix_on_save = 0
+" let g:ale_linters_explicit = 1
+" let g:ale_sign_error = '❌'
+" let g:ale_sign_warning = '⚠️'
+" let g:ale_fixers = {
+" \ 'php': ['php_cs_fixer'],
+" \ 'javascript': ['eslint', 'prettier'],
+" \ 'html': ['prettier'],
+" \ 'css': ['prettier'],
+" \ 'c': ['clang-format'],
+" \ 'cpp': ['clang-format'],
+" \ 'python': ['pylint'],
+" \}
 
 "PHP
-let g:ale_php_phpcs_executable='/home/arch/.config/composer/vendor/bin/phpcs'
-let g:ale_php_php_cs_fixer_executable='/home/arch/.config/composer/vendor/bin/php-cs-fixer'
+" let g:ale_php_phpcs_executable='/home/arch/.config/composer/vendor/bin/phpcs'
+" let g:ale_php_php_cs_fixer_executable='/home/arch/.config/composer/vendor/bin/php-cs-fixer'
 
+" Syntatic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_php_checkers = ['phpcs']
 " HTML
 autocmd FileType html setlocal tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
