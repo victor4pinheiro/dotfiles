@@ -37,6 +37,9 @@ vim.api.nvim_set_keymap('', '<F3>', ':NERDTreeToggle<CR>', table_key)
 vim.api.nvim_set_keymap('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>', table_key)
 vim.api.nvim_set_keymap('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', table_key)
 
+-- Glow
+vim.api.nvim_set_keymap('n', '<leader>p', ':Glow<CR>', table_key)
+
 ---- Plugins
 require "paq" {
     'ryanoasis/vim-devicons';
@@ -60,6 +63,7 @@ require "paq" {
     'williamboman/nvim-lsp-installer';
 
     'numToStr/FTerm.nvim';
+    'ellisonleao/glow.nvim';
 }
             
 -- NerdTREE
@@ -185,3 +189,8 @@ require'FTerm'.setup({
         width = 0.9,
     },
 })
+
+-- Glow - Markdown Preview 
+g.glow_binary_path = vim.env.HOME .. "/bin"
+vim.g.glow_border = "rounded"
+vim.g.glow_width = 120
