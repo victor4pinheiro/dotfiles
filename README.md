@@ -4,6 +4,8 @@
 
 Welcome to my dotfiles repo. Below you'll find  a list of my dotfiles, including neovim, sway and waybar.
 
+If you're new to sway and Wayland, you need to install alternatives for your programs to be compatible with Wayland, see this [guide](https://github.com/swaywm/sway/wiki/i3-Migration-Guide#common-x11-apps-used-on-i3-with-wayland-alternatives)
+
 # Summary
 * [Getting Start](#start)
   * [Prerequisites](#prerequisites)
