@@ -1,0 +1,48 @@
+* {
+    border: none;
+    font-family: Font Awesome, Roboto, Arial, sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0);
+}
+
+/*-----module groups----*/
+.modules-right {
+    margin: 3px 2px;
+}
+
+.modules-left {
+    margin-left: 2px;
+}
+
+/*-----modules indv----*/
+#workspaces button {
+    padding: 1px 5px;
+    background-color: transparent;
+}
+
+#workspaces button.focused {
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: 0.2s;
+}
+
+#clock,
+#cpu,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#tray {
+    padding: 3 10px;
+}
+
+/*-----Indicators----*/
+#pulseaudio.muted {
+    color: #cc3436;
+}
+#temperature.critical {
+    color: #cc3436;
+}
