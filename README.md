@@ -186,7 +186,7 @@ With this, just press Super + Shift + C and you'll see changes.
 <a name="arch-users"></a>
 ## For Arch users (BTW I use arch :rofl:)
 
-I don't recommend my config without see the (wiki)[https://wiki.archlinux.org/], but if you already know what (pacman.conf)[https://wiki.archlinux.org/title/pacman] and (makepkg.conf)[https://wiki.archlinux.org/title/makepkg] do, so just copy config file:
+I don't recommend my config without see the [wiki](https://wiki.archlinux.org/), but if you already know what [pacman.conf](https://wiki.archlinux.org/title/pacman) and [makepkg.conf](https://wiki.archlinux.org/title/makepkg) do, so just copy config file:
 
 WARNING: I use doas to use use root privileges, so just change to command root you installed
 Firstly the pacman:
