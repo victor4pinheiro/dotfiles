@@ -1,3 +1,4 @@
+local api = vim.api  -- to configure lua api
 local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
 local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
 local g = vim.g      -- a table to access global variables
@@ -5,7 +6,7 @@ local opt = vim.opt  -- to set options
 local table_key = { noremap = true, silent = true }
 
 ---- Global sets
-vim.api.nvim_command('syntax enable')
+api.nvim_command('syntax enable')
 opt.number = true
 opt.shiftwidth = 4
 opt.softtabstop = 4
@@ -15,36 +16,36 @@ opt.smartindent = true
 opt.smarttab = true
 opt.hidden = true
 opt.ignorecase = true
-auto_complete = true
 opt.mouse = 'a'
-opt.completeopt = {'menuone', 'noinsert', 'noselect'} 
+opt.wrap = false
+opt.shiftround = true
+opt.completeopt = {'menuone', 'noinsert', 'noselect'}
+opt.wildmode = {'list', 'longest'}
 
 ---- Keybindings
 g.mapleader = ','
 
 -- Buffer
-vim.api.nvim_set_keymap('', '<leader>z', ':bp<CR>', table_key)
-vim.api.nvim_set_keymap('', '<leader>q', ':bp<CR>', table_key)
-vim.api.nvim_set_keymap('', '<leader>x', ':bn<CR>', table_key)
-vim.api.nvim_set_keymap('', '<leader>w', ':bn<CR>', table_key)
-vim.api.nvim_set_keymap('', '<leader>c', ':bd<CR>', table_key)
+api.nvim_set_keymap('', '<leader>z', ':bp<CR>', table_key)
+api.nvim_set_keymap('', '<leader>q', ':bp<CR>', table_key)
+api.nvim_set_keymap('', '<leader>x', ':bn<CR>', table_key)
+api.nvim_set_keymap('', '<leader>w', ':bn<CR>', table_key)
+api.nvim_set_keymap('', '<leader>c', ':bd<CR>', table_key)
 
 -- LuaTREE
-vim.api.nvim_set_keymap('', '<F2>', ':NvimTreeToggle<CR>', table_key)
-vim.api.nvim_set_keymap('', '<leader>r', ':NvimTreeRefresh<CR>', table_key)
-vim.api.nvim_set_keymap('', '<leader>n', ':NvimTreeFindFile<CR>', table_key)
+api.nvim_set_keymap('', '<F2>', ':NvimTreeToggle<CR>', table_key)
+api.nvim_set_keymap('', '<leader>r', ':NvimTreeRefresh<CR>', table_key)
+api.nvim_set_keymap('', '<leader>n', ':NvimTreeFindFile<CR>', table_key)
 
 -- FTerm
-vim.api.nvim_set_keymap('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>', table_key)
-vim.api.nvim_set_keymap('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', table_key)
+api.nvim_set_keymap('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>', table_key)
+api.nvim_set_keymap('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', table_key)
 
 -- Glow
-vim.api.nvim_set_keymap('n', '<leader>p', ':Glow<CR>', table_key)
+api.nvim_set_keymap('n', '<leader>p', ':Glow<CR>', table_key)
 
 ---- Plugins
 require "paq" {
-    'ryanoasis/vim-devicons';
-    'scrooloose/nerdcommenter';
     'nvim-lualine/lualine.nvim';
     'kyazdani42/nvim-tree.lua';
     'kyazdani42/nvim-web-devicons';
@@ -217,7 +218,7 @@ cmp.setup({
         {
             name = 'buffer',
             option = {
-                get_bufnrs = function() return { vim.api.nvim_get_current_buf() } end
+                get_bufnrs = function() return { api.nvim_get_current_buf() } end
             }
         }
     },
@@ -270,4 +271,4 @@ require'FTerm'.setup({
         height = 0.9,
         width = 0.9,
     },
-}) 
+})
