@@ -7,6 +7,7 @@ local table_key = { noremap = true, silent = true }
 
 ---- Global sets
 api.nvim_command('syntax enable')
+opt.termguicolors = true
 opt.number = true
 opt.shiftwidth = 4
 opt.softtabstop = 4
@@ -21,31 +22,38 @@ opt.wrap = false
 opt.shiftround = true
 opt.completeopt = {'menuone', 'noinsert', 'noselect'}
 opt.wildmode = {'list', 'longest'}
+require('moonlight').set()
 
 ---- Keybindings
 g.mapleader = ','
 
--- Buffer
-api.nvim_set_keymap('', '<leader>z', ':bp<CR>', table_key)
-api.nvim_set_keymap('', '<leader>q', ':bp<CR>', table_key)
-api.nvim_set_keymap('', '<leader>x', ':bn<CR>', table_key)
-api.nvim_set_keymap('', '<leader>w', ':bn<CR>', table_key)
-api.nvim_set_keymap('', '<leader>c', ':bd<CR>', table_key)
+-- Bufferline
+api.nvim_set_keymap('', '<leader>q', ':BufferLineCycleNext<CR>', table_key)
+api.nvim_set_keymap('', '<leader>w', ':BufferLineCyclePrev<CR>', table_key)
+
+api.nvim_set_keymap('', '<leader>a', ':BufferLineMoveNext<CR>', table_key)
+api.nvim_set_keymap('', '<leader>s', ':BufferLineMovePrev<CR>', table_key)
+
+api.nvim_set_keymap('', '<leader>be', ':BufferLineSortByExtension<CR>', table_key)
+api.nvim_set_keymap('', '<leader>bd', ':BufferLineSortByDirectory<CR>', table_key)
+
+api.nvim_set_keymap('', '<leader>gb', ':BufferLinePick<CR>', table_key)
 
 -- LuaTREE
 api.nvim_set_keymap('', '<F2>', ':NvimTreeToggle<CR>', table_key)
 api.nvim_set_keymap('', '<leader>r', ':NvimTreeRefresh<CR>', table_key)
 api.nvim_set_keymap('', '<leader>n', ':NvimTreeFindFile<CR>', table_key)
 
--- FTerm
-api.nvim_set_keymap('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>', table_key)
-api.nvim_set_keymap('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', table_key)
-
--- Glow
-api.nvim_set_keymap('n', '<leader>p', ':Glow<CR>', table_key)
+-- Telescope
+api.nvim_set_keymap('', '<leader>ff', ':Telescope find_files<CR>', table_key)
+api.nvim_set_keymap('', '<leader>fg', ':Telescope live_grep<CR>', table_key)
+api.nvim_set_keymap('', '<leader>fb', ':Telescope buffers<CR>', table_key)
+api.nvim_set_keymap('', '<leader>fh', ':Telescope help_tags<CR>', table_key)
 
 ---- Plugins
 require "paq" {
+    'shaunsingh/moonlight.nvim';
+    'akinsho/bufferline.nvim';
     'nvim-lualine/lualine.nvim';
     'kyazdani42/nvim-tree.lua';
     'kyazdani42/nvim-web-devicons';
@@ -62,8 +70,11 @@ require "paq" {
     'saadparwaiz1/cmp_luasnip';
     'onsails/lspkind-nvim';
 
+    'nvim-telescope/telescope.nvim';
+    'nvim-lua/plenary.nvim';
 
-    'numToStr/FTerm.nvim';
+    'akinsho/toggleterm.nvim';
+
     {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'};
     "terrortylor/nvim-comment";
 }
@@ -143,7 +154,7 @@ require'nvim-tree'.setup {
 require'lualine'.setup {
     options = {
         icons_enabled = true,
-        theme = 'auto',
+        theme = 'moonlight',
         component_separators = { left = '', right = ''},
         section_separators = { left = '', right = ''},
         disabled_filetypes = {},
@@ -166,15 +177,30 @@ require'lualine'.setup {
         lualine_y = {},
         lualine_z = {}
     },
-    tabline = {
-        lualine_a = {'buffers'},
-        lualine_b = {'branch'},
-        lualine_c = {'filename'},
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = {}
-    },
+    tabline = {},
     extensions = {}
+}
+
+-- Bufferline
+require("bufferline").setup{
+    options = {
+        max_prefix_length = 15,
+        tab_size = 18,
+        diagnostics = "nvim_lsp",
+        diagnostics_update_in_insert = false,
+        offsets = {
+            {
+                filetype = "NvimTree",
+                text = "File Explorer",
+                highlight = "Directory",
+                text_align = "left"
+            }
+        },
+        diagnostics_indicator = function(count, level, diagnostics_dict, context)
+            local icon = level:match("error") and " " or " "
+            return " " .. icon .. count
+        end,
+    }
 }
 
 -- Nvim nvim-comment
@@ -263,12 +289,18 @@ lsp_installer.settings({
     max_concurrent_installers = 4,
 })
 
--- FTerm
+-- ToggleTerm
 
-require'FTerm'.setup({
-    border = 'single',
-    dimensions  = {
-        height = 0.9,
-        width = 0.9,
-    },
-})
+require("toggleterm").setup{
+    open_mapping = [[<c-\>]],
+    hide_numbers = true, -- hide the number column in toggleterm buffers
+    shade_filetypes = {},
+    shade_terminals = true,
+    shading_factor = '1', -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
+    start_in_insert = true,
+    insert_mappings = true, -- whether or not the open mapping applies in insert mode
+    persist_size = true,
+    direction = 'horizontal',
+    close_on_exit = true, -- close the terminal window when the process exits
+    shell = vim.o.shell, -- change the default shell
+}
