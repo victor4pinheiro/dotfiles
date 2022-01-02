@@ -129,7 +129,12 @@ If you don't see any changes, exit neovim and open again. With this, you'll see 
 
 Terminal:
 
-* FTerm.nvim (optional)
+* toggleterm (optional)
+
+Finder:
+
+* telescope.nvim;
+* plenary.nvim (used with telescope)
 
 Autocomplete:
 
@@ -142,9 +147,10 @@ Autocomplete:
 * nvim-cmp
 * lspkind-nvim (icons to completion)
 
-Status bar (alternative to airline):
+Status and Bufferline (alternative to airline):
 
 * lualine.nvim
+* bufferline.nvim
 
 Commenter:
 
