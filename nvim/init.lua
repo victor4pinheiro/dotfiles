@@ -7,6 +7,7 @@ local table_key = { noremap = true, silent = true }
 
 ---- Global sets
 api.nvim_command('syntax enable')
+g.do_filetype_lua = 1
 opt.termguicolors = true
 opt.number = true
 opt.shiftwidth = 4
@@ -302,5 +303,5 @@ require("toggleterm").setup{
     persist_size = true,
     direction = 'horizontal',
     close_on_exit = true, -- close the terminal window when the process exits
-    shell = vim.o.shell, -- change the default shell
-}
+    shell = "/bin/zsh"
+} 
