@@ -18,7 +18,7 @@ set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu -fn 'JetBrains Mono:pixelsize=14' -nb '#15141b' -nf '#edecee' -sb '#15141b' -sf '#61ffca' | xargs swaymsg exec --
+set $menu wofi --hide-scroll | xargs swaymsg exec --
 
 hide_edge_borders both
 ### Output configuration
