@@ -6,6 +6,10 @@ Welcome to my dotfiles repo. Below you'll find  a list of my dotfiles, including
 
 If you're new to sway and Wayland, you need to install alternatives for your programs to be compatible with Wayland, see this [guide](https://github.com/swaywm/sway/wiki/i3-Migration-Guide#common-x11-apps-used-on-i3-with-wayland-alternatives)
 
+Until v0.1.0, you can still use some X11 apps when installing xorg-xwayland.
+
+But after v0.1.0, all apps are under Wayland protocol.
+
 # Summary
 * [Getting Start](#start)
   * [Prerequisites](#prerequisites)
@@ -20,6 +24,7 @@ If you're new to sway and Wayland, you need to install alternatives for your pro
     * [List of plugins](#list-of-plugins)
   * [Sway + Waybar](#sway)
   * [For Arch users](#arch-users)
+* [Issues](#issues)
 * [License](#license)
 
 <a name="start"></a>
@@ -32,7 +37,7 @@ If you're new to sway and Wayland, you need to install alternatives for your pro
 ### Fonts
 
 * [JetBrains Mono](https://git-scm.com/)
-* [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)
+* [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) (optional)
 * [Font awesome](https://fontawesome.com/)
 * [Roboto](https://fonts.google.com/specimen/Roboto)
 
@@ -41,15 +46,15 @@ If you're new to sway and Wayland, you need to install alternatives for your pro
 
 * Window manager: [SwayWM](https://swaywm.org/)
 * Status bar: [Waybar](https://github.com/Alexays/Waybar)
-* Application launcher: [dmenu](https://tools.suckless.org/dmenu/)
+* Application launcher: [wofi](https://hg.sr.ht/~scoopta/wofi)
 
 <a name="programs"></a>
 ### Programs
 
-* Protocol: [Wayland](https://wayland.freedesktop.org/) for Sway (in Arch, sway will automatically install xorg-xwayland)
+* Protocol: [Wayland](https://wayland.freedesktop.org/) for Sway (in Arch, sway will automatically install wayland)
 * Version manager: [Git](https://git-scm.com/)
 * Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
-* Editor: [Neovim](https://neovim.io/) >= 6.0.0
+* Editor: [Neovim](https://neovim.io/) >= 7.0.0-dev
 * Audio: [Pipewire](https://pipewire.org/) with pipewire-pulse
 
 <a name="wallpaper"></a>
@@ -65,9 +70,9 @@ If you're new to sway and Wayland, you need to install alternatives for your pro
 
 ![Screenshot of system with notifications](/images/notifications.png)
 
-<h3>System with dmenu</h3>
+<h3>System with wofi</h3>
 
-![Screenshot of system with dmenu](/images/dmenu.png)
+![Screenshot of system with wofi](/images/menu.png)
 
 <h3>Kitty (Terminal)</h3>
 
@@ -203,6 +208,11 @@ Makepkg:
 ```
 doas cp -r $HOME/dotfiles/makepkg.conf /etc/makepkg.conf
 ```
+<a name="issues"></a>
+# Issues
+
+Feel free to file a new issue with a respective title and description.
+
 <a name="license"></a>
 # License
 
