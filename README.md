@@ -6,9 +6,16 @@ Welcome to my dotfiles repo. Below you'll find  a list of my dotfiles, including
 
 If you're new to sway and Wayland, you need to install alternatives for your programs to be compatible with Wayland, see this [guide](https://github.com/swaywm/sway/wiki/i3-Migration-Guide#common-x11-apps-used-on-i3-with-wayland-alternatives)
 
-Until v0.1.0, you can still use some X11 apps when installing xorg-xwayland.
+Versions difference:
 
-But after v0.1.0, all apps are under Wayland protocol.
+* v0.1.0:
+    * Using dmenu and Xwayland;
+* v0.2.0:
+    * Using wofi and removed xwayland;
+* v0.3.0:
+    * For neovim, change to packer.nvim to manage plugins and separating each section in their each file (shortcuts, plugins and config);
+    * Not using kitty anymore. Currently using foot;
+    * Some icons on waybar changed: Using font-awesome icons.
 
 # Summary
 * [Getting Start](#start)
@@ -19,7 +26,7 @@ But after v0.1.0, all apps are under Wayland protocol.
 * [Wallpaper](#wallpaper)
 * [Screenshots](#screenshot)
 * [How to use](#how-to-use)
-  * [Kitty](#kitty)
+  * [Foot (Foo terminal)](#foot)
   * [Neovim](#neovim)
     * [List of plugins](#list-of-plugins)
   * [Sway + Waybar](#sway)
@@ -38,7 +45,7 @@ But after v0.1.0, all apps are under Wayland protocol.
 
 * [JetBrains Mono](https://git-scm.com/)
 * [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) (optional)
-* [Font awesome](https://fontawesome.com/)
+* [Font Awesome](https://fontawesome.com/) - Recommended version >= 5
 * [Roboto](https://fonts.google.com/specimen/Roboto)
 
 <a name="ui"></a>
@@ -53,34 +60,34 @@ But after v0.1.0, all apps are under Wayland protocol.
 
 * Protocol: [Wayland](https://wayland.freedesktop.org/) for Sway (in Arch, sway will automatically install wayland)
 * Version manager: [Git](https://git-scm.com/)
-* Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
-* Editor: [Neovim](https://neovim.io/) >= 7.0.0-dev
+* Terminal: [Foot](https://codeberg.org/dnkl/foot)
+* Editor: [Neovim](https://neovim.io/) >= 0.6.0
 * Audio: [Pipewire](https://pipewire.org/) with pipewire-pulse
 
 <a name="wallpaper"></a>
 # Wallpaper
 
-![Screenshot of wallpaper system](/images/clear.png)
-<a href="https://wallhaven.cc/w/wq1wlr">Download</a>
+![Screenshot of wallpaper system](./images/clear.png)
+<a href="https://www.peakpx.com/en/hd-wallpaper-desktop-kfgcv">Download</a>
 
 <a name="screenshot"></a>
 # Screenshots
 
 <h3>System with notifications</h3>
 
-![Screenshot of system with notifications](/images/notifications.png)
+![Screenshot of system with notifications](./images/notifications.png)
 
 <h3>System with wofi</h3>
 
-![Screenshot of system with wofi](/images/menu.png)
+![Screenshot of system with wofi](./images/menu.png)
 
-<h3>Kitty (Terminal)</h3>
+<h3>Foot (Terminal)</h3>
 
-![Screenshot of terminal](/images/terminal.png)
+![Screenshot of terminal](./images/terminal.png)
 
 <h3>Neovim (editor)</h3>
 
-![Screenshot of neovim](/images/nvim.png)
+![Screenshot of neovim](./images/nvim.png)
 
 <a name="how-to-use"></a>
 # How to use
@@ -90,25 +97,27 @@ Firstly, clone the files in your home directory:
 git clone https://github.com/victor4pinheiro/dotfiles $HOME/
 ```
 
-<a name="kitty"></a>
-## Kitty
+<a name="foot"></a>
+## Foot (Foo terminal)
 
 Copy the folder
 ```
-cp -r $HOME/dotfiles/kitty $HOME/.config/
+cp -r $HOME/dotfiles/foot $HOME/.config/
 ```
-And now restart kitty and you'll see changes.
+In previous version, I used to kitty as my default terminal, but I searched for a lightweight alternative and so I found foot.
+
+I think it is more lightweight, easy to customize and totally made for Wayland.
 
 <a name="neovim"></a>
 ## Neovim
 
 This is more complex to do, so you will need:
-1. Install neovim (version >= 6.0.0)
+1. Install neovim (version >= v0.6.0)
 2. Create nvim directory inside $HOME/.config
 ```
 mkdir -p $HOME/.config/nvim
 ```
-3. Install a plugin manager (vim-plug, pathogen, packer.nvim etc). In this dotfile, I use paq-nvim, so acess the [Paq-nvim](https://github.com/savq/paq-nvim) and follow the instructions.
+3. Install a plugin manager (vim-plug, pathogen, packer.nvim etc). In this dotfile, I use packer.nvim, so acess the [Packer](https://github.com/wbthomason/packer.nvim) and follow the instructions.
 4. Now, copy the neovim config to nvim directory:
 ```
 cp -r $HOME/dotfiles/init.lua $HOME/.config/nvim/
@@ -119,7 +128,7 @@ nvim
 ```
 6. Now install all the plugins:
 ```
-:PaqInstall
+:PackerInstall
 ```
 7. Source the init.lua:
 ```
@@ -129,57 +138,88 @@ or
 ```
 If you don't see any changes, exit neovim and open again. With this, you'll see neovim working right.
 
+WARNING: No LSP and no parser is installed by default so you need to install them using [treesitter-nvim](https://github.com/nvim-treesitter/nvim-treesitter) and [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer).
+
 <a name="list-of-plugins"></a>
 #### List of plugins
 
-Terminal:
+Startup:
 
-* toggleterm (optional)
+* lewis6991/impatient.nvim.
 
-Finder:
+Plugin manager:
 
-* telescope.nvim;
-* plenary.nvim (used with telescope)
+* wbthomason/packer.nvim.
 
-Autocomplete:
+Language Server Protocol
 
-* LuaSnip
-* cmp-buffer
-* cmp-cmdline
-* cmp-nvim-lsp
-* cmp-path
-* cmp_luasnip
-* nvim-cmp
-* lspkind-nvim (icons to completion)
+* neovim/nvim-lspconfig;
+* williamboman/nvim-lsp-installer.
 
-Status and Bufferline (alternative to airline):
+Language Parser:
 
-* lualine.nvim
-* bufferline.nvim
+* nvim-treesitter/nvim-treesitter.
 
-Commenter:
+Rainbow brackets:
 
-* nvim-comment
+* terrortylor/nvim-comment.
 
-Installer of LSP for nvim (more practical)
+File explorer:
 
-* nvim-lsp-installer
+* kyazdani42/nvim-tree.lua;
+* kyazdani42/nvim-web-devicons.
 
-To configure LSP (you won't do anything with this, just install. All configurations are made with nvim-lsp-installer)
+Fuzzy file finder:
 
-* nvim-lspconfig
+* nvim-telescope/telescope-fzf-native.nvim;
+* nvim-telescope/telescope.nvim;
+* nvim-lua/plenary.nvim.
 
-File explorer (alternative to NERDTree):
+Completions and snippets:
 
-* nvim-tree.lua
+* onsails/lspkind-nvim;
+* hrsh7th/cmp-nvim-lsp;
+* hrsh7th/cmp-buffer;
+* hrsh7th/cmp-path;
+* hrsh7th/cmp-cmdline;
+* hrsh7th/nvim-cmp;
+* hrsh7th/cmp-calc;
+* hrsh7th/cmp-nvim-lsp-signature-help;
+* L3MON4D3/LuaSnip;
+* saadparwaiz1/cmp_luasnip.
 
-Treesitter to make highlights (this plugin can do much more, so check their wiki)
+Auto-Pair closing brackets:
 
-* nvim-treesitter
+* windwp/nvim-autopairs.
 
-Icons for luatree and lualine
+Git:
 
-* nvim-web-devicons
+* lewis6991/gitsigns.nvim.
+
+Status and bufferline
+
+* nvim-lualine/lualine.nvim;
+* akinsho/bufferline.nvim.
+
+Terminal
+
+* akinsho/toggleterm.nvim
+
+Theme
+
+* getomni/neovim
+
+Scroll
+
+* karb94/neoscroll.nvim
+
+Move lines
+
+* booperlv/nvim-gomove
+
+Colorizer
+
+* norcalli/nvim-colorizer.lua
 
 <a name="sway"></a>
 ## Sway + Waybar
@@ -220,4 +260,4 @@ This project is under the MIT license. See the LICENSE for details.
 
 [LICENSE](LICENSE)
 
-Made with ♥ by [Victor Pinheiro](https://www.linkedin.com/in/victor-4-pinheiro/)
+Made with :heart: by [Victor Pinheiro](https://www.linkedin.com/in/victor-4-pinheiro/)
