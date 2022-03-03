@@ -6,7 +6,7 @@
 }
 
 window#waybar {
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0.3);
 }
 
 /*-----module groups----*/
@@ -45,4 +45,8 @@ window#waybar {
 }
 #temperature.critical {
     color: #cc3436;
+}
+
+#tray menu {
+    background-color: #333;
 }
