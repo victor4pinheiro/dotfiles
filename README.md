@@ -6,7 +6,7 @@ Welcome to my dotfiles repo. Below you'll find  a list of my dotfiles, including
 
 If you're new to sway and Wayland, you need to install alternatives for your programs to be compatible with Wayland, see this [guide](https://github.com/swaywm/sway/wiki/i3-Migration-Guide#common-x11-apps-used-on-i3-with-wayland-alternatives)
 
-Versions difference:
+# Changelog
 
 * v0.1.0:
     * Using dmenu and Xwayland;
@@ -16,6 +16,11 @@ Versions difference:
     * For neovim, change to packer.nvim to manage plugins and separating each section in their each file (shortcuts, plugins and config);
     * Not using kitty anymore. Currently using foot;
     * Some icons on waybar changed: Using font-awesome icons.
+* v0.4.0:
+    * Testing [helix](https://helix-editor.com/);
+    * Remove wallpaper (too much heavy);
+    * Change waybar to swaybar (waybar too slow on boot)
+    * Change wofi to bemenu-wayland
 
 # Summary
 * [Getting Start](#start)
@@ -23,13 +28,11 @@ Versions difference:
     * [Fonts](#fonts)
     * [UI Components](#ui)
     * [Programs](#programs)
-* [Wallpaper](#wallpaper)
 * [Screenshots](#screenshot)
 * [How to use](#how-to-use)
   * [Foot (Foo terminal)](#foot)
-  * [Neovim](#neovim)
-    * [List of plugins](#list-of-plugins)
-  * [Sway + Waybar](#sway)
+  * [Helix](#helix)
+  * [Sway + Swaybar](#sway)
   * [For Arch users](#arch-users)
 * [Issues](#issues)
 * [License](#license)
@@ -45,15 +48,15 @@ Versions difference:
 
 * [JetBrains Mono](https://git-scm.com/)
 * [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) (optional)
-* [Font Awesome](https://fontawesome.com/) - Recommended version >= 5
 * [Roboto](https://fonts.google.com/specimen/Roboto)
+* [Awesome terminal fonts](https://github.com/gabrielelana/awesome-terminal-fonts)
 
 <a name="ui"></a>
 ### UI Components
 
 * Window manager: [SwayWM](https://swaywm.org/)
-* Status bar: [Waybar](https://github.com/Alexays/Waybar)
-* Application launcher: [wofi](https://hg.sr.ht/~scoopta/wofi)
+* Status bar: [Swaybar](https://swaywm.org/)
+* Application launcher: [bemenu](https://github.com/Cloudef/bemenu)
 
 <a name="programs"></a>
 ### Programs
@@ -61,33 +64,26 @@ Versions difference:
 * Protocol: [Wayland](https://wayland.freedesktop.org/) for Sway (in Arch, sway will automatically install wayland)
 * Version manager: [Git](https://git-scm.com/)
 * Terminal: [Foot](https://codeberg.org/dnkl/foot)
-* Editor: [Neovim](https://neovim.io/) >= 0.6.0
+* Editor: [Helix](https://helix-editor.com/)
 * Audio: [Pipewire](https://pipewire.org/) with pipewire-pulse
-
-<a name="wallpaper"></a>
-# Wallpaper
-
-![Screenshot of wallpaper system](./images/clear.png)
-<a href="https://www.peakpx.com/en/hd-wallpaper-desktop-kfgcv">Download</a>
 
 <a name="screenshot"></a>
 # Screenshots
 
-<h3>System with notifications</h3>
-
-![Screenshot of system with notifications](./images/notifications.png)
+<h3>Background</h3>
+![Screenshot fot system](./images/clear.png)
 
 <h3>System with wofi</h3>
 
-![Screenshot of system with wofi](./images/menu.png)
+![Screenshot of system with bemenu](./images/menu.png)
 
 <h3>Foot (Terminal)</h3>
 
 ![Screenshot of terminal](./images/terminal.png)
 
-<h3>Neovim (editor)</h3>
+<h3>Helix-editor</h3>
 
-![Screenshot of neovim](./images/nvim.png)
+![Screenshot of neovim](./images/editor.png)
 
 <a name="how-to-use"></a>
 # How to use
@@ -108,130 +104,19 @@ In previous version, I used to kitty as my default terminal, but I searched for 
 
 I think it is more lightweight, easy to customize and totally made for Wayland.
 
-<a name="neovim"></a>
-## Neovim
+<a name="helix"></a>
+## Helix
 
-This is more complex to do, so you will need:
-1. Install neovim (version >= v0.6.0)
-2. Create nvim directory inside $HOME/.config
-```
-mkdir -p $HOME/.config/nvim
-```
-3. Install a plugin manager (vim-plug, pathogen, packer.nvim etc). In this dotfile, I use packer.nvim, so acess the [Packer](https://github.com/wbthomason/packer.nvim) and follow the instructions.
-4. Now, copy the neovim config to nvim directory:
-```
-cp -r $HOME/dotfiles/init.lua $HOME/.config/nvim/
-```
-5. Enter neovim by typing nvim on terminal
-```
-nvim
-```
-6. Now install all the plugins:
-```
-:PackerInstall
-```
-7. Source the init.lua:
-```
-:luafile %
-or
-:source %
-```
-If you don't see any changes, exit neovim and open again. With this, you'll see neovim working right.
-
-WARNING: No LSP and no parser is installed by default so you need to install them using [treesitter-nvim](https://github.com/nvim-treesitter/nvim-treesitter) and [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer).
-
-<a name="list-of-plugins"></a>
-#### List of plugins
-
-Startup:
-
-* lewis6991/impatient.nvim.
-
-Plugin manager:
-
-* wbthomason/packer.nvim.
-
-Language Server Protocol
-
-* neovim/nvim-lspconfig;
-* williamboman/nvim-lsp-installer.
-
-Language Parser:
-
-* nvim-treesitter/nvim-treesitter.
-
-Rainbow brackets:
-
-* terrortylor/nvim-comment.
-
-File explorer:
-
-* kyazdani42/nvim-tree.lua;
-* kyazdani42/nvim-web-devicons.
-
-Fuzzy file finder:
-
-* nvim-telescope/telescope-fzf-native.nvim;
-* nvim-telescope/telescope.nvim;
-* nvim-lua/plenary.nvim.
-
-Completions and snippets:
-
-* onsails/lspkind-nvim;
-* hrsh7th/cmp-nvim-lsp;
-* hrsh7th/cmp-buffer;
-* hrsh7th/cmp-path;
-* hrsh7th/cmp-cmdline;
-* hrsh7th/nvim-cmp;
-* hrsh7th/cmp-calc;
-* hrsh7th/cmp-nvim-lsp-signature-help;
-* L3MON4D3/LuaSnip;
-* saadparwaiz1/cmp_luasnip.
-
-Auto-Pair closing brackets:
-
-* windwp/nvim-autopairs.
-
-Git:
-
-* lewis6991/gitsigns.nvim.
-
-Status and bufferline
-
-* nvim-lualine/lualine.nvim;
-* akinsho/bufferline.nvim.
-
-Terminal
-
-* akinsho/toggleterm.nvim
-
-Theme
-
-* getomni/neovim
-
-Scroll
-
-* karb94/neoscroll.nvim
-
-Move lines
-
-* booperlv/nvim-gomove
-
-Colorizer
-
-* norcalli/nvim-colorizer.lua
+Now this is more easy to do. Just install the package from official repositories or compile it.
 
 <a name="sway"></a>
-## Sway + Waybar
+## Sway + Swaybar
 
 Copy the config file of sway
 ```
 cp -r $HOME/dotfiles/sway $HOME/.config/
 ```
-Now copy the config directory of waybar
-```
-cp -r $HOME/dotfiles/waybar $HOME/.config/
-```
+
 With this, just press Super + Shift + C and you'll see changes.
 
 <a name="arch-users"></a>
