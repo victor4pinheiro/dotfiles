@@ -21,21 +21,32 @@ If you're new to sway and Wayland, you need to install alternatives for your pro
     * Remove wallpaper (too much heavy);
     * Change waybar to swaybar (waybar too slow on boot)
     * Change wofi to bemenu-wayland
+* Current version:
+    * Using VSCode as default
+    * Set wallpaper to my monitors again, because there is no sense to not use in dual monitors (it consumes little ram compared to waybar)
+    * Update sway to make it more "organized"
+    * Using waybar because I like the feature of increasing or lower the volume level
 
 # Summary
-* [Getting Start](#start)
-  * [Prerequisites](#prerequisites)
-    * [Fonts](#fonts)
-    * [UI Components](#ui)
-    * [Programs](#programs)
-* [Screenshots](#screenshot)
-* [How to use](#how-to-use)
-  * [Foot (Foo terminal)](#foot)
-  * [Helix](#helix)
-  * [Sway + Swaybar](#sway)
-  * [For Arch users](#arch-users)
-* [Issues](#issues)
-* [License](#license)
+- [Dotfiles](#dotfiles)
+- [Changelog](#changelog)
+- [Summary](#summary)
+- [:bulb: Getting Start](#bulb-getting-start)
+  - [Prerequisites](#prerequisites)
+    - [Fonts](#fonts)
+    - [UI Components](#ui-components)
+    - [Programs](#programs)
+    - [Terminal](#terminal)
+- [Screenshots](#screenshots)
+- [How to use](#how-to-use)
+  - [Foot (Foo terminal)](#foot-foo-terminal)
+  - [Waybar](#waybar)
+  - [Sway](#sway)
+  - [For Arch users (BTW I use arch :rofl:)](#for-arch-users-btw-i-use-arch-rofl)
+  - [Environment Varibles](#environment-varibles)
+  - [MPV](#mpv)
+- [Issues](#issues)
+- [License](#license)
 
 <a name="start"></a>
 # :bulb: Getting Start
@@ -46,8 +57,8 @@ If you're new to sway and Wayland, you need to install alternatives for your pro
 <a name="fonts"></a>
 ### Fonts
 
-* [JetBrains Mono](https://git-scm.com/)
-* [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) (optional)
+* [JetBrains Mono NerdFonts](https://www.nerdfonts.com/)
+* [Other Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) (optional)
 * [Roboto](https://fonts.google.com/specimen/Roboto)
 * [Awesome terminal fonts](https://github.com/gabrielelana/awesome-terminal-fonts)
 
@@ -55,35 +66,36 @@ If you're new to sway and Wayland, you need to install alternatives for your pro
 ### UI Components
 
 * Window manager: [SwayWM](https://swaywm.org/)
-* Status bar: [Swaybar](https://swaywm.org/)
+* Status bar: [Waybar](https://github.com/Alexays/Waybar)
 * Application launcher: [bemenu](https://github.com/Cloudef/bemenu)
 
 <a name="programs"></a>
 ### Programs
 
-* Protocol: [Wayland](https://wayland.freedesktop.org/) for Sway (in Arch, sway will automatically install wayland)
+* Protocol: [Wayland](https://wayland.freedesktop.org/) for Sway (Pure wayland, not Xwayland)
 * Version manager: [Git](https://git-scm.com/)
 * Terminal: [Foot](https://codeberg.org/dnkl/foot)
-* Editor: [Helix](https://helix-editor.com/)
+* Editor: [VSCode](https://code.visualstudio.com/)
 * Audio: [Pipewire](https://pipewire.org/) with pipewire-pulse
+
+<a name="terminal"></a>
+### Terminal
+
+* Prompt (including theme): [Starship](https://starship.rs/)
+* Shell: [Fish shell](https://fishshell.com/)
+* Manage multiple runtime versions: [asdf-vm](https://asdf-vm.com/)
+* GNUPG to sign keys
 
 <a name="screenshot"></a>
 # Screenshots
 
 <h3>Background</h3>
+
 ![Screenshot fot system](./images/clear.png)
 
 <h3>System with wofi</h3>
 
-![Screenshot of system with bemenu](./images/menu.png)
-
-<h3>Foot (Terminal)</h3>
-
-![Screenshot of terminal](./images/terminal.png)
-
-<h3>Helix-editor</h3>
-
-![Screenshot of neovim](./images/editor.png)
+![Screenshot of system with bemenu, terminal and vscode](./images/terminal_menu.png)
 
 <a name="how-to-use"></a>
 # How to use
@@ -104,13 +116,16 @@ In previous version, I used to kitty as my default terminal, but I searched for 
 
 I think it is more lightweight, easy to customize and totally made for Wayland.
 
-<a name="helix"></a>
-## Helix
+<a name="waybar"></a>
+## Waybar
 
-Now this is more easy to do. Just install the package from official repositories or compile it.
+Copy the config file of waybar
+```
+cp -r $HOME/dotfiles/waybar $HOME/.config/
+```
 
 <a name="sway"></a>
-## Sway + Swaybar
+## Sway
 
 Copy the config file of sway
 ```
@@ -133,6 +148,22 @@ Makepkg:
 ```
 doas cp -r $HOME/dotfiles/makepkg.conf /etc/makepkg.conf
 ```
+<a name="Environment Path"></a>
+## Environment Varibles
+
+Using Wayland, sometimes I need to force apps to use Wayland or to set hardware acceleration to some apps.
+Remember, I don't have any responsability. It's up to you all problems that can happs.
+```
+doas cp -r $HOME/dotfiles/environment /etc/environment
+```
+
+<a name="MPV"></a>
+## MPV
+MPV is a lightweight videoplayer and I set to use VA-API acceleration.
+```
+cp -r $HOME/dotfiles/mpv $HOME/.config/ 
+```
+
 <a name="issues"></a>
 # Issues
 
