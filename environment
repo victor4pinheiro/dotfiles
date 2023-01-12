@@ -1,0 +1,22 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+
+# QT
+export QT_QPA_PLATFORM=wayland
+
+# CLUTTER
+export CLUTTER_BACKEND=wayland
+
+
+# FIREFOX
+export MOZ_ENABLE_WAYLAND=1
+
+# Hardware acceleration
+export LIBVA_DRIVER_NAME=radeonsi
+export VDPAU_DRIVER=radeonsi
+
+# SWAY
+export XDG_CURRENT_DESKTOP=sway
