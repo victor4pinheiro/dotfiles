@@ -20,15 +20,18 @@ set $term foot
 # on the original workspace that the command was run on.
 set $menu bemenu-run  -bn -H 30 -p "Search" --tb "#15141b" --hb "#15141b" --hf "#61ffca" --nf "#edecee" | xargs swaymsg exec --
 
-hide_edge_borders both
 ### Output configuration
 #
+
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output HDMI-A-1 bg #000000 solid_color
+output HDMI-A-1 bg /home/arch/Pictures/wallpaper-1.jpg fill
+output DP-1 bg /home/arch/Pictures/wallpaper-2.jpg fill
 #
 # Example configuration:
 #
-output HDMI-A-1 resolution 1366x768 position 1366,0
+output HDMI-A-1 pos 0 0 res 1366x768
+output DP-1 pos 1366 0 res 1366x768
+focus output HDMI-A-1
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -45,6 +48,10 @@ output HDMI-A-1 resolution 1366x768 position 1366,0
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
+input "type:keyboard" {
+    xkb_layout "br"
+}
+
 ### Input configuration
 #
 # Example configuration:
@@ -58,10 +65,6 @@ output HDMI-A-1 resolution 1366x768 position 1366,0
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-
-input "type:keyboard" {
-    xkb_layout "br"
-}
 
 ### Key bindings
 #
@@ -87,7 +90,7 @@ input "type:keyboard" {
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -201,33 +204,26 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-bindsym Print exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
-bindsym $mod+p exec grim screenshot.png
 #
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-
 bar {
-    swaybar_command swaybar
-    font Jetbrains Mono
-    status_command while /home/arch/.config/sway/status.sh; do sleep 1; done
+    swaybar_command waybar
 
-    colors {
-        background #101010
-        statusline #5f87d7
-        separator  #404040
-
-        focused_workspace   #a78edb #a78edb #000000
-        active_workspace    #101010 #101010 #a78edb
-        inactive_workspace  #101010 #101010 #606060
-        urgent_workspace    #101010 #101010 #d81860
-    }
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
 }
 
+# Borders
 default_border none
-seat seat0 xcursor_theme "capitaine-cursors" 24
-exec_always gsettings set org.gnome.desktop.interface cursor-theme "capitaine-cursors"
-exec /sbin/gammastep
+
+# Screenshot
+bindsym Print exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
+bindsym $mod+p exec grim screenshot.png
+
+# Initializers
+exec gammastep
 exec mako
+
 include /etc/sway/config.d/*
