@@ -21,11 +21,16 @@ If you're new to sway and Wayland, you need to install alternatives for your pro
     * Remove wallpaper (too much heavy);
     * Change waybar to swaybar (waybar too slow on boot)
     * Change wofi to bemenu-wayland
-* Current version:
+* 0.5.0:
     * Using VSCode as default
     * Set wallpaper to my monitors again, because there is no sense to not use in dual monitors (it consumes little ram compared to waybar)
     * Update sway to make it more "organized"
     * Using waybar because I like the feature of increasing or lower the volume level
+* Current version:
+    * Use Neovim;
+    * Replace dual to a single monitor
+    * Some changes to make my experience better
+    * Update wallpaper
 
 # Summary
 - [Dotfiles](#dotfiles)
@@ -42,6 +47,7 @@ If you're new to sway and Wayland, you need to install alternatives for your pro
   - [Foot (Foo terminal)](#foot-foo-terminal)
   - [Waybar](#waybar)
   - [Sway](#sway)
+  - [TMUX](#TMUX)
   - [For Arch users (BTW I use arch :rofl:)](#for-arch-users-btw-i-use-arch-rofl)
   - [Environment Varibles](#environment-varibles)
   - [MPV](#mpv)
@@ -77,6 +83,7 @@ If you're new to sway and Wayland, you need to install alternatives for your pro
 * Terminal: [Foot](https://codeberg.org/dnkl/foot)
 * Editor: [VSCode](https://code.visualstudio.com/)
 * Audio: [Pipewire](https://pipewire.org/) with pipewire-pulse
+* Multiplexer: [Tmux](https://github.com/tmux/tmux) with [TPM](https://github.com/tmux-plugins/tpm) 
 
 <a name="terminal"></a>
 ### Terminal
@@ -93,9 +100,9 @@ If you're new to sway and Wayland, you need to install alternatives for your pro
 
 ![Screenshot fot system](./images/clear.png)
 
-<h3>System with wofi</h3>
+<h3>Usual workflow</h3>
 
-![Screenshot of system with bemenu, terminal and vscode](./images/terminal_menu.png)
+![Screenshot of system with bemenu, terminal, tmux and neovim](./images/terminal_menu.png)
 
 <a name="how-to-use"></a>
 # How to use
@@ -134,6 +141,29 @@ cp -r $HOME/dotfiles/sway $HOME/.config/
 
 With this, just press Super + Shift + C and you'll see changes.
 
+<a name="tmux"></a>
+## TMUX
+
+TMUX is a really addition to my workflow because I have the performance of fish and starship using multiple panels (I tried the splits from neovim but I didn't like it).
+
+To this, you must install tmux using your package manager or the executable and follow instructions to use the [TPM](https://github.com/tmux-plugins/tpm), a plugin manager for tmux.
+
+After configuring the TPM you can just copy the .tmux to $XDG_CONFIG_HOME/tmux/tmux.conf or to $HOME. This can done this way:
+
+For $HOME:
+
+```
+cp -r $HOME/dotfiles/.tmux.conf $HOME/.tmux
+```
+
+For $XDG_CONFIG_HOME:
+
+```
+cp -r $HOME/dotfiles/.tmux.conf $XDG_CONFIG_HOME/tmux/tmux.conf
+```
+
+Usually $XDG_CONFIG_HOME is $HOME/.config but check before doing this step.
+
 <a name="arch-users"></a>
 ## For Arch users (BTW I use arch :rofl:)
 
@@ -151,8 +181,7 @@ doas cp -r $HOME/dotfiles/makepkg.conf /etc/makepkg.conf
 <a name="Environment Path"></a>
 ## Environment Varibles
 
-Using Wayland, sometimes I need to force apps to use Wayland or to set hardware acceleration to some apps.
-Remember, I don't have any responsability. It's up to you all problems that can happs.
+Using Wayland, sometimes I need to force apps to use Wayland.
 ```
 doas cp -r $HOME/dotfiles/environment /etc/environment
 ```
@@ -174,6 +203,6 @@ Feel free to file a new issue with a respective title and description.
 
 This project is under the MIT license. See the LICENSE for details.
 
-[LICENSE](LICENSE)
+[LICENSE](./LICENSE)
 
 Made with :heart: by [Victor Pinheiro](https://www.linkedin.com/in/victor-4-pinheiro/)
