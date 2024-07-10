@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "bottom",
     "heigh": 24,
-    "width": 1366,
+    "width": 1920,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-right": ["tray", "pulseaudio", "cpu", "memory", "network", "temperature", "clock"],
     "sway/workspaces": {
