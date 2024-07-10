@@ -98,7 +98,7 @@ If you're new to sway and Wayland, you need to install alternatives for your pro
 
 <h3>Background</h3>
 
-![Screenshot fot system](./images/clear.png)
+![Screenshot of system](./images/clear.png)
 
 <h3>Usual workflow</h3>
 
