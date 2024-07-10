@@ -5,18 +5,18 @@
 #
 
 # QT
-export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORM="wayland;xcb"
 
-# CLUTTER
-export CLUTTER_BACKEND=wayland
+# Electron
+export ELECTRON_OZONE_PLATFORM_HINT=auto
 
+# SDL
+#export  SDL_VIDEODRIVER="wayland,x11"
 
-# FIREFOX
-export MOZ_ENABLE_WAYLAND=1
+# Java
+export _JAVA_AWT_WM_NONREPARENTING=1
 
-# Hardware acceleration
-export LIBVA_DRIVER_NAME=radeonsi
-export VDPAU_DRIVER=radeonsi
-
-# SWAY
+# Sway
+export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=sway
+export XDG_SESSION_DESKTOP=sway
