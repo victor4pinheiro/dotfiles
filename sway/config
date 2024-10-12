@@ -18,22 +18,27 @@ set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu bemenu-run  -bn -H 30 -p "Search" --tb "#15141b" --hb "#15141b" --hf "#61ffca" --nf "#edecee" | xargs swaymsg exec --
+set $menu bemenu-run  -bn -H 30 -p "Search" --fb "#1e1e2e" --ff "#cdd6f4" --nb "#1e1e2e" --nf "#cdd6f4" --tb "#1e1e2e" --hb "#1e1e2e" --tf "#f38ba8" --hf "#f9e2af" --af "#cdd6f4" --ab "#1e1e2e" | xargs swaymsg exec --
 
 ### Output configuration
 #
-
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg $HOME/Pictures/wall.png fill
+#output DP-1 bg $HOME/Pictures/acheron.jpg fill
+#output HDMI-A-1 bg $HOME/Pictures/yellan.jpg fill
 
-exec wbg $HOME/Pictures/wall.png
+#output * color_profile icc $HOME/.config/sway/lg.icm
+
+output * bg #000000 solid_color
 
 #
 # Example configuration:
 #
-output * adaptive_sync on res 1920x1080 position 0 0
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+
+output DP-1 adaptive_sync on res 1920x1080 position 0 0
+#output HDMI-A-1 adaptive_sync off res 1366x768 position 1920 0
 
 ### Idle configuration
 #
@@ -41,7 +46,7 @@ output * adaptive_sync on res 1920x1080 position 0 0
 #
 # exec swayidle -w \
 #          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
 #          before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -52,6 +57,15 @@ input "type:keyboard" {
     xkb_layout "br"
 }
 
+#input "1133:49271:Logitech_USB_Optical_Mouse" {
+#    accel_profile "flat"
+#    pointer_accel 1
+#}
+
+### Input configuration
+#
+# Example configuration:
+#
 #   input "2:14:SynPS/2_Synaptics_TouchPad" {
 #       dwt enabled
 #       tap enabled
@@ -206,9 +220,6 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     swaybar_command waybar
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
 }
 
 # Borders
@@ -216,7 +227,7 @@ default_border none
 
 # File explorer
 
-bindsym $mod+n exec nautilus
+bindsym $mod+n exec dolphin
 
 # Screenshot
 set $ps1 Print
@@ -240,12 +251,11 @@ for_window [window_role = "task_dialog"] floating enable
 for_window [window_type = "menu"] floating enable
 for_window [app_id = "floating"] floating enable
 for_window [app_id = "floating_update"] floating enable, resize set width 1000px height 600px
-for_window [class = "(?i)pinentry"] floating enable
 for_window [title = "Administrator privileges required"] floating enable
 
 # Initializers
 exec mako
 exec $HOME/.config/wlsunset.sh
-focus_follows_mouse no
+exec nm-applet 
 
 include /etc/sway/config.d/*
