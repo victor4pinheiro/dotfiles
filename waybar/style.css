@@ -1,52 +1,79 @@
+@import "latte.css";
+
 * {
-    border: none;
-    font-family: Font Awesome, Roboto, Arial, sans-serif;
-    font-size: 14px;
-    color: #ffffff;
+  font-family: FantasqueSansMono Nerd Font;
+  font-size: 1rem;
+  min-height: 0;
 }
 
-window#waybar {
-    background: rgba(0, 0, 0, 0.3);
+#waybar {
+  background: transparent;
+  color: @text;
+  margin: 2px 5px;
 }
 
-/*-----module groups----*/
-.modules-right {
-    margin: 3px 2px;
+#workspaces {
+  background-color: @surface0;
+  border-radius: 1rem;
+  margin: 2px 0.4rem;
 }
 
-.modules-left {
-    margin-left: 2px;
-}
-
-/*-----modules indv----*/
 #workspaces button {
-    padding: 1px 5px;
-    background-color: transparent;
+  color: @lavender;
+  border-radius: 2rem;
 }
 
 #workspaces button.focused {
-    background-color: rgba(0, 0, 0, 0.3);
-    transition: 0.2s;
+  color: @sky;
 }
 
-#clock,
+#workspaces button.urgent {
+  color: @flamingo;
+}
+
+#workspaces button:hover {
+  color: @sapphire;
+}
+
+#custom-music,
+#tray,
 #cpu,
+#clock,
 #memory,
-#temperature,
 #network,
-#pulseaudio,
+#temperature,
+#wireplumber,
+#custom-lock,
+#custom-power {
+  background-color: @surface0;
+  padding: 0.5rem 1rem;
+  margin: 2px 0;
+}
+
+#temperature {
+  border-radius: 0 1rem 1rem 0;
+  margin-right: 0.4rem;
+}
+
+
+#clock {
+  color: @blue;
+  border-radius: 1rem;
+  margin-right: 0.4rem;
+}
+
+#wireplumber {
+  color: @maroon;
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 0.4rem;
+}
+
+#custom-music {
+  color: @mauve;
+  border-radius: 1rem;
+}
+
 #tray {
-    padding: 3 10px;
-}
-
-/*-----Indicators----*/
-#pulseaudio.muted {
-    color: #cc3436;
-}
-#temperature.critical {
-    color: #cc3436;
-}
-
-#tray menu {
-    background-color: #333;
+  margin-right: 0.2rem;
+  border-radius: 1rem;
 }
