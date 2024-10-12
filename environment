@@ -7,11 +7,17 @@
 # QT
 export QT_QPA_PLATFORM="wayland;xcb"
 
+# Firefox
+export MOZ_ENABLE_WAYLAND=1
+
+# Wayland
+export QT_QPA_PLATFORM="wayland;xcb"
+
 # Electron
-export ELECTRON_OZONE_PLATFORM_HINT=auto
+#export ELECTRON_OZONE_PLATFORM_HINT=auto
 
 # SDL
-#export  SDL_VIDEODRIVER="wayland,x11"
+#export SDL_VIDEODRIVER="wayland,x11"
 
 # Java
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -20,3 +26,13 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP=sway
+
+# Cursors
+export XCURSOR_THEME=catppuccin-latte-red-cursors
+export XCURSOR_SIZE=24
+ 
+# EZA
+export EZA_ICONS_AUTO=always
+  
+# Editor
+export EDITOR=nvim
