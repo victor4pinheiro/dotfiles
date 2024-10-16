@@ -36,3 +36,6 @@ export EZA_ICONS_AUTO=always
   
 # Editor
 export EDITOR=nvim
+
+# Default Applications Dolphin KDE at Window Manager
+export XDG_MENU_PREFIX=arch-
