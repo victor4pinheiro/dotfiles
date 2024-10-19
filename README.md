@@ -42,7 +42,6 @@ If you're new to sway and Wayland, you need to install alternatives for your pro
     - [UI Components](#ui-components)
     - [Programs](#programs)
     - [Terminal](#terminal)
-- [Screenshots](#screenshots)
 - [How to use](#how-to-use)
   - [Foot (Foo terminal)](#foot-foo-terminal)
   - [Waybar](#waybar)
@@ -92,17 +91,6 @@ If you're new to sway and Wayland, you need to install alternatives for your pro
 * Shell: [Fish shell](https://fishshell.com/)
 * Manage multiple runtime versions: [asdf-vm](https://asdf-vm.com/)
 * GNUPG to sign keys
-
-<a name="screenshot"></a>
-# Screenshots
-
-<h3>Background</h3>
-
-![Screenshot of system](./images/clear.png)
-
-<h3>Usual workflow</h3>
-
-![Screenshot of system with bemenu, terminal, tmux and neovim](./images/terminal_menu.png)
 
 <a name="how-to-use"></a>
 # How to use

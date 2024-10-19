@@ -5,13 +5,10 @@
 #
 
 # QT
-export QT_QPA_PLATFORM="wayland;xcb"
+#export QT_QPA_PLATFORM="wayland;xcb"
 
 # Firefox
 export MOZ_ENABLE_WAYLAND=1
-
-# Wayland
-export QT_QPA_PLATFORM="wayland;xcb"
 
 # Electron
 #export ELECTRON_OZONE_PLATFORM_HINT=auto

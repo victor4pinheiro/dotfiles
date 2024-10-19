@@ -1,38 +1,38 @@
-@import "latte.css";
+@import "mocha.css";
 
 * {
-  font-family: FantasqueSansMono Nerd Font;
-  font-size: 1rem;
-  min-height: 0;
+    font-family: FantasqueSansMono Nerd Font;
+    font-size: 1rem;
+    min-height: 0;
 }
 
 #waybar {
-  background: transparent;
-  color: @text;
-  margin: 2px 5px;
+    background: transparent;
+    color: @text;
+    margin: 2px 5px;
 }
 
 #workspaces {
-  background-color: @surface0;
-  border-radius: 1rem;
-  margin: 2px 0.4rem;
+    background-color: rgba(49, 50, 68, 0.7);
+    border-radius: 1rem;
+    margin: 2px 0.4rem;
 }
 
 #workspaces button {
-  color: @lavender;
-  border-radius: 2rem;
+    color: @mauve;
+    border-radius: 2rem;
 }
 
 #workspaces button.focused {
-  color: @sky;
+    color: @red;
 }
 
 #workspaces button.urgent {
-  color: @flamingo;
+    color: @flamingo;
 }
 
 #workspaces button:hover {
-  color: @sapphire;
+    color: @sapphire;
 }
 
 #custom-music,
@@ -45,35 +45,35 @@
 #wireplumber,
 #custom-lock,
 #custom-power {
-  background-color: @surface0;
-  padding: 0.5rem 1rem;
-  margin: 2px 0;
+    background-color: rgba(49, 50, 68, 0.5);
+    padding: 0.5rem 1rem;
+    margin: 2px 0;
 }
 
 #temperature {
-  border-radius: 0 1rem 1rem 0;
-  margin-right: 0.4rem;
+    border-radius: 0 1rem 1rem 0;
+    margin-right: 0.4rem;
 }
 
 
 #clock {
-  color: @blue;
-  border-radius: 1rem;
-  margin-right: 0.4rem;
+    color: @blue;
+    border-radius: 1rem;
+    margin-right: 0.4rem;
 }
 
 #wireplumber {
-  color: @maroon;
-  border-radius: 1rem 0px 0px 1rem;
-  margin-left: 0.4rem;
+    color: @maroon;
+    border-radius: 1rem 0px 0px 1rem;
+    margin-left: 0.4rem;
 }
 
 #custom-music {
-  color: @mauve;
-  border-radius: 1rem;
+    color: @mauve;
+    border-radius: 1rem;
 }
 
 #tray {
-  margin-right: 0.2rem;
-  border-radius: 1rem;
+    margin-right: 0.2rem;
+    border-radius: 1rem;
 }
