@@ -1,0 +1,36 @@
+program_options:
+  tray:             true    # [bool] Enable the tray icon. "auto"
+                            # means auto-hide the tray icon when
+                            # there are no handled devices.
+
+  menu:             flat    # ["flat" | "nested"] Set the
+                            # systray menu behaviour.
+
+  automount:        true   # [bool] Enable automatic mounting.
+
+  notify:           false    # [bool] Enable notifications.
+
+  password_cache:   60      # [int] Password cache in minutes. Caching is
+                            # disabled by default. It can be disabled
+                            # explicitly by setting it to false
+
+  file_manager:     yazi
+    # [string] Set program to open directories. It will be invoked
+    # with the folder path as its last command line argument.
+
+  terminal:         'foot -D'
+    # [string] Set terminal command line to open directories. It will be
+    # invoked with the folder path as its last command line argument.
+
+  password_prompt: ["gnome-keyring-query", "get", "{id_uuid}"]
+    # [string|list] Set command to retrieve passwords. If specified
+    # as a list it defines the ARGV array for the program call. If
+    # specified as a string, it will be expanded in a shell-like
+    # manner. Each string will be formatted using `str.format`. For a
+    # list of device attributes, see below. The two special string values
+    # "builtin:gui" and "builtin:tty" signify to use udiskie's
+    # builtin password prompt.
+
+  event_hook: "zenity --info --text '{event}: {device_presentation}'"
+    # [string|list] Set command to be executed on any device event.
+    # This is specified like `password_prompt`.

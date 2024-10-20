@@ -12,6 +12,12 @@ cp -rf $HOME/.config/foot $HOME/dotfiles/
 ## Fish
 cp -rf $HOME/.config/fish/config.fish $HOME/dotfiles/fish/
 
+## Sway
+cp -rf $HOME/.config/udiskie $HOME/dotfiles/
+
+## Sway
+cp -rf $HOME/.config/yazi $HOME/dotfiles/
+
 ## Environment
 
 cp -rf /etc/environment $HOME/dotfiles/
