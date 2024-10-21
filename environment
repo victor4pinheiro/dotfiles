@@ -5,7 +5,7 @@
 #
 
 # QT
-#export QT_QPA_PLATFORM="wayland;xcb"
+export QT_QPA_PLATFORM="wayland;xcb"
 
 # Firefox
 export MOZ_ENABLE_WAYLAND=1
@@ -25,7 +25,7 @@ export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP=sway
 
 # Cursors
-export XCURSOR_THEME=catppuccin-latte-red-cursors
+export XCURSOR_THEME=catppuccin-mocha-red-cursors
 export XCURSOR_SIZE=24
  
 # EZA
@@ -33,6 +33,3 @@ export EZA_ICONS_AUTO=always
   
 # Editor
 export EDITOR=nvim
-
-# Default Applications Dolphin KDE at Window Manager
-export XDG_MENU_PREFIX=arch-

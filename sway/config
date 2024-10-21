@@ -54,7 +54,9 @@ output DP-1 adaptive_sync on res 1920x1080 position 0 0
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 input "type:keyboard" {
-    xkb_layout "br"
+    xkb_layout br
+    xkb_variant abnt2
+    xkb_model abnt2
 }
 
 #input "1133:49271:Logitech_USB_Optical_Mouse" {
@@ -255,6 +257,7 @@ for_window [title = "Administrator privileges required"] floating enable
 
 # Initializers
 exec mako
+exec udiskie
 exec $HOME/.config/wlsunset.sh
 exec nm-applet 
 

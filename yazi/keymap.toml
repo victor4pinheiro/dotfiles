@@ -155,6 +155,12 @@ keymap = [
 ]
 
 [[manager.prepend_keymap]]
+on  = "<C-n>"
+run = '''
+    shell 'ripdrag "$@" -x 2>/dev/null &' --confirm
+'''
+
+[[manager.prepend_keymap]]
 on   = [ "<Right>" ]
 run = "plugin fuse-archive --args=mount"
 desc = "Enter or Mount selected archive"
@@ -213,6 +219,12 @@ desc = "Merge current project to other projects"
 on   = "T"
 run  = "plugin --sync hide-preview"
 desc = "Hide or show preview"
+
+[[manager.prepend_keymap]]
+on  = "y"
+run = [ '''
+	shell 'for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list' --confirm
+''', "yank" ]
 
 
 [tasks]
