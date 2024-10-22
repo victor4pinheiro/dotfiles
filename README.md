@@ -77,12 +77,18 @@ If you're new to sway and Wayland, you need to install alternatives for your pro
 <a name="programs"></a>
 ### Programs
 
-* Protocol: [Wayland](https://wayland.freedesktop.org/) for Sway (Pure wayland, not Xwayland)
+* WM: [sway](https://swaywm.org/) with Xorg-Xwayland
 * Version manager: [Git](https://git-scm.com/)
 * Terminal: [Foot](https://codeberg.org/dnkl/foot)
-* Editor: [VSCode](https://code.visualstudio.com/)
+* Editor: [neovim](https://neovim.io/)
 * Audio: [Pipewire](https://pipewire.org/) with pipewire-pulse
 * Multiplexer: [Tmux](https://github.com/tmux/tmux) with [TPM](https://github.com/tmux-plugins/tpm) 
+* File manager: [Yazi](https://yazi-rs.github.io/)
+* Mount disks: [udiskie](https://github.com/coldfix/udiskie)
+* Access Android: [android-file-transfer](https://whoozle.github.io/android-file-transfer-linux/)
+* Notifications: [mako](https://github.com/emersion/mako)
+* Wireless: (NetworkManager)[https://networkmanager.dev/] with nm-applet
+* Screenshot: (wl-clipboard)[https://github.com/bugaevc/wl-clipboard] + (grim)[https://sr.ht/~emersion/grim/] + (slurp)[https://github.com/emersion/slurp]
 
 <a name="terminal"></a>
 ### Terminal
