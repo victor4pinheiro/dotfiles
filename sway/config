@@ -24,7 +24,11 @@ set $menu bemenu-run  -bn -H 30 -p "Search" --fb "#1e1e2e" --ff "#cdd6f4" --nb "
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output DP-1 bg $HOME/Pictures/wallpaper.jpg fill
-#output HDMI-A-1 bg $HOME/Pictures/yellan.jpg fill
+
+set $opacity 0.7
+for_window [class="steam"] opacity 0.8
+for_window [app_id="spotube"] opacity 0.7
+for_window [class="Signal"] opacity 0.7
 
 #output * color_profile icc $HOME/.config/sway/lg.icm
 
@@ -260,5 +264,6 @@ exec mako
 exec udiskie
 exec $HOME/.config/wlsunset.sh
 exec nm-applet 
+
 
 include /etc/sway/config.d/*

@@ -1,30 +1,34 @@
 #!/bin/sh
 
 ## Sway
-cp -rf $HOME/.config/sway $HOME/dotfiles/
+cp -rf $HOME/.config/sway  ./
 
 ## Waybar
-cp -rf $HOME/.config/waybar $HOME/dotfiles/
+cp -rf $HOME/.config/waybar  ./
 
 ## Footer
-cp -rf $HOME/.config/foot $HOME/dotfiles/
+cp -rf $HOME/.config/foot  ./
 
 ## Fish
-cp -rf $HOME/.config/fish/config.fish $HOME/dotfiles/fish/
+cp -rf $HOME/.config/fish/config.fish  ./fish/
 
 ## Sway
-cp -rf $HOME/.config/udiskie $HOME/dotfiles/
+cp -rf $HOME/.config/udiskie  ./
 
 ## Sway
-cp -rf $HOME/.config/yazi $HOME/dotfiles/
+cp -rf $HOME/.config/yazi  ./
+
+## Tmux
+
+cp -rf $HOME/.tmux.conf  ./
 
 ## Environment
 
-cp -rf /etc/environment $HOME/dotfiles/
+cp -rf /etc/environment  ./
 
 ## Makepkg
-cp -rf /etc/makepkg.conf $HOME/dotfiles/
-cp -rf /etc/makepkg.conf.d $HOME/dotfiles/
+cp -rf /etc/makepkg.conf  ./
+cp -rf /etc/makepkg.conf.d  ./
 
 ## Pacman
-cp -rf /etc/pacman.conf $HOME/dotfiles/
+cp -rf /etc/pacman.conf  ./
