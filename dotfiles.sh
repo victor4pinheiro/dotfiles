@@ -9,6 +9,10 @@ cp -rf $HOME/.config/waybar  ./
 ## Footer
 cp -rf $HOME/.config/foot  ./
 
+## Kitty
+
+cp -rf $HOME/.config/kitty  ./
+
 ## Fish
 cp -rf $HOME/.config/fish/config.fish  ./fish/
 

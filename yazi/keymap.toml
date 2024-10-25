@@ -151,7 +151,7 @@ keymap = [
 	{ on = "<F1>", run = "help", desc = "Open help" },
 
     # Restore
-    { on = ["d", "u"], run = "plugin restore", desc = "Restore last deleted files/folders" },
+    { on = ["u", "u"], run = "plugin restore", desc = "Restore last deleted files/folders" },
 ]
 
 [[manager.prepend_keymap]]
@@ -219,6 +219,11 @@ desc = "Merge current project to other projects"
 on   = "T"
 run  = "plugin --sync hide-preview"
 desc = "Hide or show preview"
+
+[[manager.prepend_keymap]]
+on   = "<C-t>"
+run  = "plugin --sync max-preview"
+desc = "Maximize or restore preview"
 
 [[manager.prepend_keymap]]
 on  = "y"

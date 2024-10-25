@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term foot
+set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -23,7 +23,7 @@ set $menu bemenu-run  -bn -H 30 -p "Search" --fb "#1e1e2e" --ff "#cdd6f4" --nb "
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output DP-1 bg $HOME/Pictures/wallpaper.jpg fill
+output DP-1 bg $HOME/Pictures/wallpaper_stars.jpg fill
 
 set $opacity 0.7
 for_window [class="steam"] opacity 0.8
