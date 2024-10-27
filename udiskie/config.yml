@@ -31,6 +31,6 @@ program_options:
     # "builtin:gui" and "builtin:tty" signify to use udiskie's
     # builtin password prompt.
 
-  event_hook: "zenity --info --text '{event}: {device_presentation}'"
+  event_hook: ""
     # [string|list] Set command to be executed on any device event.
     # This is specified like `password_prompt`.

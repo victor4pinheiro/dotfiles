@@ -19,7 +19,6 @@ set PATH $PATH /home/arch/.npm-global/bin/
 source /opt/asdf-vm/asdf.fish
 source ~/.asdf/plugins/java/set-java-home.fish
 uv generate-shell-completion fish | source
-~/.local/bin/mise activate fish | source
 zoxide init fish | source
 
 
