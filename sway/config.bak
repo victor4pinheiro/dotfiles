@@ -16,18 +16,38 @@ set $right l
 # Your preferred terminal emulator
 set $term foot
 # Your preferred application launcher
-set $menu bemenu-run  -bn -H 30 -p "Search" --fb "#1e1e2e" --ff "#cdd6f4" --nb "#1e1e2e" --nf "#cdd6f4" --tb "#1e1e2e" --hb "#1e1e2e" --tf "#f38ba8" --hf "#f9e2af" --af "#cdd6f4" --ab "#1e1e2e"
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $menu bemenu-run  -bn -H 30 -p "Search" --fb "#1e1e2e" --ff "#cdd6f4" --nb "#1e1e2e" --nf "#cdd6f4" --tb "#1e1e2e" --hb "#1e1e2e" --tf "#f38ba8" --hf "#f9e2af" --af "#cdd6f4" --ab "#1e1e2e" | xargs swaymsg exec --
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg $HOME/Pictures/wallpaper.jpg fill
+output DP-1  bg $HOME/Pictures/wallpaper.jpg fill
+
+#output * {
+#    allow_tearing yes
+#    max_render_time off
+#}
+#
+#set $opacity 0.7
+#for_window [class="steam"] opacity 0.8
+#for_window [app_id="spotube"] opacity 0.7
+#for_window [class="Signal"] opacity 0.7
+
+#output * color_profile icc $HOME/.config/sway/lg.icm
+
+#output * bg #000000 solid_color
+
 #
 # Example configuration:
 #
-output DPI-1 allow_tearing yes max_render_time off resolution 1920x1080 position 1920,0
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+
+output DP-1 res 1920x1080 position 0 0
+#output HDMI-A-1 adaptive_sync off res 1366x768 position 1920 0
 
 ### Idle configuration
 #
@@ -37,10 +57,21 @@ output DPI-1 allow_tearing yes max_render_time off resolution 1920x1080 position
 #          timeout 300 'swaylock -f -c 000000' \
 #          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
 #          before-sleep 'swaylock -f -c 000000'
-# 
+#
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+
+input "type:keyboard" {
+    xkb_layout br
+    xkb_variant abnt2
+    xkb_model abnt2
+}
+
+#input "1133:49271:Logitech_USB_Optical_Mouse" {
+#    accel_profile "flat"
+#    pointer_accel 1
+#}
 
 ### Input configuration
 #
@@ -55,12 +86,6 @@ output DPI-1 allow_tearing yes max_render_time off resolution 1920x1080 position
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-
-input "type:keyboard" {
-    xkb_layout br
-    xkb_variant abnt2
-    xkb_model abnt2
-}
 
 ### Key bindings
 #
@@ -199,29 +224,6 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-#
-# Utilities:
-#
-    # Special keys to adjust volume via PulseAudio
-    bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
-    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
-    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
-    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
-    # Special keys to adjust brightness via brightnessctl
-    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-    # Special keys to take a screenshot with grim
-    set $ps1 Print
-    set $ps2 Control+Print
-    set $ps3 Alt+Print
-    set $ps4 Alt+Control+Print
-    set $psf $(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").jpg
-     
-    bindsym $ps1 exec grim - | wl-copy
-    bindsym $ps2 exec grim -g "$(slurp)" - | wl-copy
-    bindsym $ps3 exec grim $psf
-    bindsym $ps4 exec grim -g "$(slurp)" $psf
-    bindsym $mod+shift+s exec grim -g "$(slurp)" - | wl-copy
 
 #
 # Status Bar:
@@ -231,20 +233,44 @@ bar {
     swaybar_command waybar
 }
 
-### Personal config
-
+# Borders
 default_border none
 
-exec mako
-exec udiskie
-exec $HOME/.config/wlsunset.sh
-
 # File explorer
+
 bindsym $mod+n exec foot yazi
 
 # Browser
 bindsym $mod+g exec firefox
 
+# Screenshot
+set $ps1 Print
+set $ps2 Control+Print
+set $ps3 Alt+Print
+set $ps4 Alt+Control+Print
+set $psf $(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").jpg
+ 
+bindsym $ps1 exec grim - | wl-copy
+bindsym $ps2 exec grim -g "$(slurp)" - | wl-copy
+bindsym $ps3 exec grim $psf
+bindsym $ps4 exec grim -g "$(slurp)" $psf
+bindsym $mod+shift+s exec grim -g "$(slurp)" - | wl-copy
+
+# Automatic floating windows
+for_window [window_role = "pop-up"] floating enable
+for_window [window_role = "bubble"] floating enable
+for_window [window_role = "dialog"] floating enable
+for_window [window_type = "dialog"] floating enable
+for_window [window_role = "task_dialog"] floating enable
+for_window [window_type = "menu"] floating enable
+for_window [app_id = "floating"] floating enable
+for_window [app_id = "floating_update"] floating enable, resize set width 1000px height 600px
+for_window [title = "Administrator privileges required"] floating enable
+
+# Initializers
+exec mako
+exec udiskie
+exec $HOME/.config/wlsunset.sh
 
 
 include /etc/sway/config.d/*
