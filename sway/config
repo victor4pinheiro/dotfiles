@@ -21,11 +21,17 @@ set $menu bemenu-run  -bn -H 30 -p "Search" --fb "#1e1e2e" --ff "#cdd6f4" --nb "
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg $HOME/Pictures/wallpaper.jpg fill
+output * bg $HOME/Pictures/momo_ayase.jpg fill
 #
 # Example configuration:
 #
-output DPI-1 allow_tearing yes max_render_time off resolution 1920x1080 position 1920,0
+output * resolution 1920x1080 position 0,0
+
+output * {
+    allow_tearing yes
+    max_render_time off 
+    adaptive_sync on
+}
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -216,7 +222,8 @@ bindsym $mod+r mode "resize"
     set $ps3 Alt+Print
     set $ps4 Alt+Control+Print
     set $psf $(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").jpg
-     
+
+    # Record screen
     bindsym $ps1 exec grim - | wl-copy
     bindsym $ps2 exec grim -g "$(slurp)" - | wl-copy
     bindsym $ps3 exec grim $psf
@@ -244,6 +251,16 @@ bindsym $mod+n exec foot yazi
 
 # Browser
 bindsym $mod+g exec firefox
+
+# Xwayland
+
+exec_always xrandr --output DPI-1 --primary
+
+bindsym Ctrl+Print+g exec wf-recorder -f ~/recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4")
+
+bindsym Ctrl+Shift+Print+g exec wf-recorder -g "$$(slurp)" -f ~/recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4")
+
+bindsym Ctrl+Shift+BackSpace exec killall -s SIGINT wf-recorder
 
 
 
