@@ -154,6 +154,18 @@ keymap = [
     { on = ["u", "u"], run = "plugin restore", desc = "Restore last deleted files/folders" },
 ]
 
+
+[[manager.prepend_keymap]]
+on   = "<C-o>"
+run  = "plugin open-with-cmd --args=block"
+desc = "Open with command in the terminal"
+
+[[manager.prepend_keymap]]
+on   = "<C-O>"
+run  = "plugin open-with-cmd"
+desc = "Open with command"
+
+
 [[manager.prepend_keymap]]
 on  = "<C-n>"
 run = '''
