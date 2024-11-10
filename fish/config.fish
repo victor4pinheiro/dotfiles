@@ -30,3 +30,4 @@ function y
 	end
 	rm -f -- "$tmp"
 end
+complete -f -c dotnet -a "(dotnet complete (commandline -cp))"
