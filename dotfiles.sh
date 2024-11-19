@@ -34,5 +34,5 @@ cp -rf /etc/makepkg.conf.d  ./
 cp -rf /etc/pacman.conf  ./
 
 ## Darkman
-cp -rf $HOME/.config/light-mode.d ./
-cp -rf $HOME/.config/dark-mode.d ./
+cp -rf /usr/share/light-mode.d ./
+cp -rf /usr/share/dark-mode.d ./

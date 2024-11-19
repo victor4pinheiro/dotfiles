@@ -2,9 +2,7 @@
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
-# Read `man 5 sway` for a complete reference.
-
-### Variables
+# Read `man 5 sway` for a complete reference. ### Variables
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
@@ -245,7 +243,8 @@ default_border none
 
 exec mako
 exec udiskie
-exec wl-gammarelay-rs 
+exec wl-gammarelay-rs
+exec darkman
 
 # File explorer
 bindsym $mod+n exec foot yazi
