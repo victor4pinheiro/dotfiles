@@ -32,3 +32,7 @@ cp -rf /etc/makepkg.conf.d  ./
 
 ## Pacman
 cp -rf /etc/pacman.conf  ./
+
+## Darkman
+cp -rf $HOME/.config/light-mode.d ./
+cp -rf $HOME/.config/dark-mode.d ./
