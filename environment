@@ -24,7 +24,7 @@ export ELECTRON_OZONE_PLATFORM_HINT=auto
 
 # SDL
 #export SDL_VIDEODRIVER="wayland,x11"
-export SDL_DYNAMIC_API=/usr/lib/libSDL2-2.0.so
+#export SDL_DYNAMIC_API=/usr/lib/libSDL2-2.0.so
 
 # Java
 export _JAVA_AWT_WM_NONREPARENTING=1
