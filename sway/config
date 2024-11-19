@@ -245,7 +245,7 @@ default_border none
 
 exec mako
 exec udiskie
-exec gammastep
+exec wl-gammarelay-rs 
 
 # File explorer
 bindsym $mod+n exec foot yazi
