@@ -3,18 +3,28 @@
 #
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
+#
+# Libreoffice
+export SAL_USE_VCLPLUGIN=gtk3
 
 # QT
-export QT_QPA_PLATFORM="wayland;xcb"
+export QT_QPA_PLATFORM="wayland-egl;xcb"
+export QT_WAYLAND_FORCE_DPI=physical
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+
+# Elementary/EFL
+export ECORE_EVAS_ENGINE=wayland_egl
+export ELM_ENGINE=wayland_egl
 
 # Firefox
 export MOZ_ENABLE_WAYLAND=1
 
 # Electron
-#export ELECTRON_OZONE_PLATFORM_HINT=auto
+export ELECTRON_OZONE_PLATFORM_HINT=auto
 
 # SDL
 #export SDL_VIDEODRIVER="wayland,x11"
+export SDL_DYNAMIC_API=/usr/lib/libSDL2-2.0.so
 
 # Java
 export _JAVA_AWT_WM_NONREPARENTING=1

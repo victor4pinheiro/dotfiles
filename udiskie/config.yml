@@ -8,13 +8,13 @@ program_options:
 
   automount:        true   # [bool] Enable automatic mounting.
 
-  notify:           false    # [bool] Enable notifications.
+  notify:           true    # [bool] Enable notifications.
 
   password_cache:   60      # [int] Password cache in minutes. Caching is
                             # disabled by default. It can be disabled
                             # explicitly by setting it to false
 
-  file_manager:     yazi
+  file_manager:     foot yazi
     # [string] Set program to open directories. It will be invoked
     # with the folder path as its last command line argument.
 

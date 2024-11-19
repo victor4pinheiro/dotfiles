@@ -21,7 +21,8 @@ set $menu bemenu-run  -bn -H 30 -p "Search" --fb "#1e1e2e" --ff "#cdd6f4" --nb "
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg $HOME/Pictures/momo_ayase.jpg fill
+#
+ output * bg $HOME/Pictures/wallpaper.jpg fill
 #
 # Example configuration:
 #
@@ -244,7 +245,7 @@ default_border none
 
 exec mako
 exec udiskie
-exec $HOME/.config/wlsunset.sh
+exec gammastep
 
 # File explorer
 bindsym $mod+n exec foot yazi
@@ -263,5 +264,4 @@ bindsym Ctrl+Shift+Print+g exec wf-recorder -g "$$(slurp)" -f ~/recording_$(date
 bindsym Ctrl+Shift+BackSpace exec killall -s SIGINT wf-recorder
 
 
-
-include /etc/sway/config.d/*
+include $HOME/.config/sway/config.d/*
