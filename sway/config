@@ -20,7 +20,7 @@ set $menu bemenu-run  -bn -H 30 -p "Search" --fb "#1e1e2e" --ff "#cdd6f4" --nb "
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #
- output * bg $HOME/Pictures/wallpaper.jpg fill
+output * bg $HOME/Pictures/wallpaper.jpg fill
 #
 # Example configuration:
 #
@@ -261,6 +261,8 @@ bindsym Ctrl+Print+g exec wf-recorder -f ~/recording_$(date +"%Y-%m-%d_%H:%M:%S.
 bindsym Ctrl+Shift+Print+g exec wf-recorder -g "$$(slurp)" -f ~/recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4")
 
 bindsym Ctrl+Shift+BackSpace exec killall -s SIGINT wf-recorder
+
+bindsym $mod+p exec darkman toggle
 
 
 include $HOME/.config/sway/config.d/*
