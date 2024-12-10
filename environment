@@ -8,9 +8,7 @@
 export SAL_USE_VCLPLUGIN=gtk3
 
 # QT
-export QT_QPA_PLATFORM="wayland-egl;xcb"
-export QT_WAYLAND_FORCE_DPI=physical
-export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+export QT_QPA_PLATFORM="wayland;xcb"
 
 # Elementary/EFL
 export ECORE_EVAS_ENGINE=wayland_egl
@@ -44,3 +42,6 @@ export EZA_ICONS_AUTO=always
   
 # Editor
 export EDITOR=nvim
+
+# Sway
+WLR_RENDERER=vulkan

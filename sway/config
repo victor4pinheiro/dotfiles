@@ -25,12 +25,14 @@ output * bg $HOME/Pictures/wallpaper.jpg fill
 # Example configuration:
 #
 output * resolution 1920x1080 position 0,0
+output * color_profile icc $HOME/Documents/lg_ultragear.icm
 
 output * {
     allow_tearing yes
-    max_render_time off 
-    adaptive_sync on
+    max_render_time off
 }
+for_window [all] allow_tearing yes
+
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 

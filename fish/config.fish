@@ -7,21 +7,32 @@ if status --is-login
     end
 end
 
-starship init fish | source
+
+## Alias
 alias ls="eza"
-alias install="sudo pacman -Syu"
-alias aur_install="yay -Syu"
+alias i="sudo pacman"
+alias auri="yay -Syu"
 alias lg="lazygit"
+
+## Envs
 set -gx GPG_TTY (tty)
 set -gx NPM_CONFIG_PREFIX ~/.npm-global
 set -U fish_user_paths ~/.local/bin/ $fish_user_paths
 set PATH $PATH /home/arch/.npm-global/bin/
+
+## Completions
 source /opt/asdf-vm/asdf.fish
 source ~/.asdf/plugins/java/set-java-home.fish
 uv generate-shell-completion fish | source
+complete -f -c dotnet -a "(dotnet complete (commandline -cp))"
+
+
+## Start programs
+starship init fish | source
 zoxide init fish | source
 
 
+## File explorer
 function y
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
 	yazi $argv --cwd-file="$tmp"
@@ -30,4 +41,3 @@ function y
 	end
 	rm -f -- "$tmp"
 end
-complete -f -c dotnet -a "(dotnet complete (commandline -cp))"
