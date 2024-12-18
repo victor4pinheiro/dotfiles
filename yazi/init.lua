@@ -1,1 +1,1 @@
-require("fuse-archive"):setup()
+require("simple-mtpfs"):setup({})

@@ -17,7 +17,7 @@ Add this to your `~/.config/yazi/keymap.toml`:
 ```toml
 [[manager.prepend_keymap]]
 on   = "T"
-run  = "plugin --sync max-preview"
+run  = "plugin max-preview"
 desc = "Maximize or restore preview"
 ```
 

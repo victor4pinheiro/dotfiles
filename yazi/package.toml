@@ -1,5 +1,5 @@
 [plugin]
-deps = [{ use = "Reledia/glow", rev = "f52b382" }, { use = "Lil-Dank/lazygit", rev = "c82794f" }, { use = "yazi-rs/plugins:hide-preview", rev = "4f1d0ae" }, { use = "dawsers/fuse-archive", rev = "d649714" }, { use = "yazi-rs/plugins:max-preview", rev = "591db0e" }, { use = "Ape/open-with-cmd", rev = "8d7abc8" }]
+deps = [{ use = "boydaihungst/restore", rev = "49c3e55" }, { use = "Reledia/glow", rev = "c2ed51e" }, { use = "GrzegorzKozub/mdcat", rev = "d3d5089" }, { use = "AnirudhG07/rich-preview", rev = "8be4d27" }, { use = "boydaihungst/simple-mtpfs", rev = "4941d8f" }, { use = "yazi-rs/plugins:mime-ext", rev = "7afba3a" }, { use = "Ape/open-with-cmd", rev = "8d7abc8" }, { use = "yazi-rs/plugins:max-preview", rev = "7afba3a" }, { use = "yazi-rs/plugins:hide-preview", rev = "7afba3a" }, { use = "Lil-Dank/lazygit", rev = "c82794f" }]
 
 [flavor]
 deps = []
