@@ -24,8 +24,6 @@ set PATH $PATH /home/arch/.npm-global/bin/
 source /opt/asdf-vm/asdf.fish
 source ~/.asdf/plugins/java/set-java-home.fish
 uv generate-shell-completion fish | source
-complete -f -c dotnet -a "(dotnet complete (commandline -cp))"
-
 
 ## Start programs
 starship init fish | source
