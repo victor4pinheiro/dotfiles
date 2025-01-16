@@ -44,4 +44,4 @@ export EZA_ICONS_AUTO=always
 export EDITOR=nvim
 
 # Sway
-WLR_RENDERER=vulkan
+export WLR_RENDERER=vulkan
