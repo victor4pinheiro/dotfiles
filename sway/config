@@ -14,18 +14,18 @@ set $right l
 # Your preferred terminal emulator
 set $term foot
 # Your preferred application launcher
-set $menu bemenu-run  -bn -H 30 -p "Search" --fb "#1e1e2e" --ff "#cdd6f4" --nb "#1e1e2e" --nf "#cdd6f4" --tb "#1e1e2e" --hb "#1e1e2e" --tf "#f38ba8" --hf "#f9e2af" --af "#cdd6f4" --ab "#1e1e2e"
+set $menu wmenu-run
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #
-output * bg $HOME/Pictures/ELDENRING_NIGHTREIGN_03.png fill
+output * bg $HOME/Pictures/temple_japanese.jpeg fill
 #
 # Example configuration:
 #
 output * resolution 1920x1080 position 0,0
-output * color_profile icc $HOME/Documents/lg_ultragear.icm
+output * color_profile icc $HOME/Documents/ultragear.icm
 
 output * {
     allow_tearing yes

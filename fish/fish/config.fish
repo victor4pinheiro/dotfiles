@@ -1,10 +1,10 @@
 set TTY1 (tty)
 
 if status --is-login
-	eval $(keychain --eval --quiet id_ed25519 ~/.ssh/id_ed25519)
-	if test (tty) = /dev/tty1
-		exec sway
-	end
+    eval $(keychain --eval --quiet id_ed25519 ~/.ssh/id_ed25519)
+    if test (tty) = /dev/tty1
+        exec sway
+    end
 end
 
 
