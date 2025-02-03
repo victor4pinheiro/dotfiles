@@ -10,7 +10,7 @@ end
 
 ## Alias
 alias ls="eza"
-alias i="sudo pacman"
+alias i="sudo pacman -Syu"
 alias auri="yay -Syu"
 alias lg="lazygit"
 
@@ -19,12 +19,8 @@ set -gx GPG_TTY (tty)
 set -gx NPM_CONFIG_PREFIX ~/.npm-global
 set -U fish_user_paths ~/.local/bin/ $fish_user_paths
 set PATH $PATH /home/arch/.npm-global/bin/
-source ~/.asdf/plugins/dotnet/set-dotnet-env.fish
 
 ## Completions
-source /opt/asdf-vm/asdf.fish
-source ~/.asdf/plugins/java/set-java-home.fish
-complete -f -c dotnet -a "(dotnet complete (commandline -cp))"
 # uv generate-shell-completion fish | source
 
 ## Start programs
