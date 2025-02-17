@@ -16,12 +16,19 @@ alias lg="lazygit"
 
 ## Envs
 set -gx GPG_TTY (tty)
-set -gx NPM_CONFIG_PREFIX ~/.npm-global
+#set -gx NPM_CONFIG_PREFIX ~/.npm-global
 set -U fish_user_paths ~/.local/bin/ $fish_user_paths
-set PATH $PATH /home/arch/.npm-global/bin/
+set PATH $PATH $HOME/.dotnet/tools
+#set PATH $PATH /home/arch/.npm-global/bin/
 
 ## Completions
 # uv generate-shell-completion fish | source
+# ~/.config/fish/config.fish
+if status is-interactive
+  mise activate fish | source
+else
+  mise activate fish --shims | source
+end
 
 ## Start programs
 starship init fish | source
