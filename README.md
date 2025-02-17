@@ -56,6 +56,11 @@ If you're new to sway and Wayland, you need to install alternatives for your pro
 <a name="start"></a>
 # :bulb: Getting Start
 
+<a name="wallpaper"></a>
+## Wallpaper
+
+<img src="./images/wallpaper.jpg" />
+
 <a name="prerequisites"></a>
 ## Prerequisites
 
