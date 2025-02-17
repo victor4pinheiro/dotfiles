@@ -1,5 +1,47 @@
-[plugin]
-deps = [{ use = "boydaihungst/restore", rev = "49c3e55" }, { use = "Reledia/glow", rev = "c2ed51e" }, { use = "GrzegorzKozub/mdcat", rev = "d3d5089" }, { use = "AnirudhG07/rich-preview", rev = "8be4d27" }, { use = "boydaihungst/simple-mtpfs", rev = "4941d8f" }, { use = "yazi-rs/plugins:mime-ext", rev = "7afba3a" }, { use = "Ape/open-with-cmd", rev = "8d7abc8" }, { use = "yazi-rs/plugins:max-preview", rev = "7afba3a" }, { use = "yazi-rs/plugins:hide-preview", rev = "7afba3a" }, { use = "Lil-Dank/lazygit", rev = "c82794f" }]
+[[plugin.deps]]
+use = "boydaihungst/restore"
+rev = "49c3e55"
+hash = ""
+
+[[plugin.deps]]
+use = "Reledia/glow"
+rev = "c2ed51e"
+hash = "a0d529db5083aa93f810e1c50ef8024e"
+
+[[plugin.deps]]
+use = "GrzegorzKozub/mdcat"
+rev = "d3d5089"
+hash = ""
+
+[[plugin.deps]]
+use = "AnirudhG07/rich-preview"
+rev = "8be4d27"
+hash = "c9a3d0731e7d7340e2c6d6126b1f3aa3"
+
+[[plugin.deps]]
+use = "boydaihungst/simple-mtpfs"
+rev = "4941d8f"
+hash = "65d56664e878fafb39679ae9d95e5e89"
+
+[[plugin.deps]]
+use = "Ape/open-with-cmd"
+rev = "8d7abc8"
+hash = "b562a73ad1413134968d9a949ab8eb1b"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:max-preview"
+rev = "7afba3a"
+hash = "9bc26d10d2f6e2aa93b10905b1b76979"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:hide-preview"
+rev = "7afba3a"
+hash = "5be5885898ca9df783bdec0d402bf4b0"
+
+[[plugin.deps]]
+use = "Lil-Dank/lazygit"
+rev = "c82794f"
+hash = "2b0c33928986f126d5c5a4cac31a6b46"
 
 [flavor]
 deps = []
