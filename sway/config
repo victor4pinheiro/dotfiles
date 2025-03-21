@@ -29,9 +29,9 @@ output * resolution 1920x1080 position 0,0
 output * color_profile icc $HOME/Documents/ultragear.icm
 
 output * {
+    render_bit_depth 10
     allow_tearing yes
     max_render_time off
-    adaptive_sync on
 }
 for_window [all] allow_tearing yes
 
