@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 append_keymap = [
     { on = ["u", "u"], run = "plugin restore", desc = "Restore last deleted files/folders" },
 ]
@@ -16,4 +16,5 @@ prepend_keymap = [
     { on = "T", run = "plugin hide-preview", desc = "Hide or show preview" },
     { on = "<C-n>", run = """         shell 'ripdrag "$@" -x 2>/dev/null &' --confirm     """, desc = "" },
     { on = ["g", "i"], run = "plugin lazygit", desc = "run lazygit" },
+    { on = "!", run = 'shell "$SHELL" --block', desc = "Open shell here" }
 ]

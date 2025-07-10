@@ -22,6 +22,7 @@ prepend_previewers = [
 [preview]
 max_width = 1920
 max_height = 1060
+image_delay = 0
 cache_dir = "$HOME/.local/share/yazi/"
 image_filter = "lanczos3"
 image_quality = 90
