@@ -2,9 +2,9 @@ set TTY1 (tty)
 
 if status --is-login
 	eval $(keychain --eval --quiet id_ed25519 ~/.ssh/id_ed25519)
-	if test (tty) = /dev/tty1
-		exec sway
-	end
+	#	if test (tty) = /dev/tty1
+	#		exec sway
+	#	end
 end
 
 
@@ -13,6 +13,13 @@ alias ls="eza"
 alias i="sudo pacman -Syu"
 alias auri="yay -Syu"
 alias lg="lazygit"
+
+### Systemd
+alias start="sudo systemctl start"
+alias restart="sudo systemctl restart"
+alias stop="sudo systemctl stop"
+alias enable="sudo systemctl enable"
+alias disable="sudo systemctl disable"
 
 ## Envs
 set -gx GPG_TTY (tty)
