@@ -3,13 +3,13 @@
 * {
     font-family: FantasqueSansMono Nerd Font;
     font-size: 1rem;
-    min-height: 0;
 }
 
-#waybar {
-    background-color: rgba(0, 0, 0, 0.7);
+window#waybar {
+    background: rgba(0,0,0,0);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
     color: @text;
-    margin: 2px 5px;
 }
 
 #workspaces {
@@ -34,16 +34,13 @@
     color: @sapphire;
 }
 
-#custom-music,
 #tray,
 #cpu,
 #clock,
 #memory,
 #network,
 #temperature,
-#wireplumber,
-#custom-lock,
-#custom-power {
+#wireplumber {
     padding: 0.5rem 1rem;
     margin: 2px 0;
 }
