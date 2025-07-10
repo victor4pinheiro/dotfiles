@@ -45,3 +45,6 @@ export EDITOR=nvim
 
 # Sway
 export WLR_RENDERER=vulkan
+
+# Bemenu
+export BEMENU_BACKEND=wayland
