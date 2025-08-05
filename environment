@@ -48,3 +48,6 @@ export WLR_RENDERER=vulkan
 
 # Bemenu
 export BEMENU_BACKEND=wayland
+
+# Vulkan
+export MESA_SHADER_CACHE_MAX_SIZE=12G
