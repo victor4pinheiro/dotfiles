@@ -286,8 +286,4 @@ exec_always {
     gsettings set $gnome-schema cursor-theme "catppuccin-mocha-red-cursors"
 }
 
-# Bongocat
-
-exec bongocat --config .config/bongocat.conf --watch-config
-
 include $HOME/.config/sway/config.d/*
