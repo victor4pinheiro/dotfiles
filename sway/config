@@ -286,4 +286,8 @@ exec_always {
     gsettings set $gnome-schema cursor-theme "catppuccin-mocha-red-cursors"
 }
 
+# Network
+
+exec nm-applet
+
 include $HOME/.config/sway/config.d/*
