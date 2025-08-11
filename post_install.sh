@@ -57,6 +57,8 @@ fi
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+cd ../
+rm -rf yay
 
 # Ask to install yay packages
 echo -e "\n${YELLOW}📦 Do you want to install the following AUR (yay) packages?${NC}"
@@ -82,5 +84,14 @@ sudo systemctl enable --now reflector.service
 # Add user to groups
 sudo usermod -aG gamemode,realtime,audio,video,wheel,suwayomi-server $USER
 
+# Change default shell to fish
+sudo chsh -s /usr/bin/fish $USER
+
 # Start sway
-sudo systemctl enable --now ly.service
+
+echo "To start your new system, you need to configure:"
+echo "-AppArmor: Add the modules to GRUB config and reboot."
+echo "-Firefox: Set firefox to use yazi."
+echo "Don't worry. You can start to configure after you start SwayWM".
+echo "To start SwayWM, execute:"
+echo "sudo systemctl enable --now ly.service"
