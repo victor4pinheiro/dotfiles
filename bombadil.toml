@@ -13,11 +13,10 @@ dotfiles_dir = "dotfiles"
 # and `target` shall be relative to $HOME directory or absolute.
 
 # Terminal
-foot = { source = "terminals/alacritty", target = ".config/foot" }
+foot = { source = "terminals/foot", target = ".config/foot" }
 
 # Shell and configs
 fish = { source = "shell/fish", target = ".config/fish" }
-starship = { source = "shell/starship.toml", target = ".config/starship.toml" }
 
 # Wayland
 sway = { source = "wayland/sway", target = ".config/sway" }
@@ -28,3 +27,6 @@ tmux = { source = "multiplexer/tmux", target = ".tmux.conf" }
 
 # File explorer
 yazi = { source = "explorer/yazi", target = ".config/yazi" }
+
+# USB
+udiskie = { source = "usb/udiskie", target = ".config/udiskie" }
