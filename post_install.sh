@@ -81,3 +81,6 @@ sudo systemctl enable --now reflector.service
 
 # Add user to groups
 sudo usermod -aG gamemode,realtime,audio,video,wheel,suwayomi-server $USER
+
+# Start sway
+sudo systemctl enable --now ly.service
