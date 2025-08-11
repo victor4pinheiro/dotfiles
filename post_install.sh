@@ -90,6 +90,9 @@ xdg-user-dirs-update
 # Change default shell to fish
 sudo chsh -s /usr/bin/fish $USER
 
+# Copy pictures to use as wallpaper
+cp -rf ./images/day.jpg ./images/night.jpg ~/Pictures/
+
 # Start sway
 
 echo "To start your new system, you need to configure:"
