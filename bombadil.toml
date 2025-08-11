@@ -31,3 +31,6 @@ yazi = { source = "explorer/yazi", target = ".config/yazi" }
 
 # USB
 udiskie = { source = "usb/udiskie", target = ".config/udiskie" }
+
+# XDG-DESKTOP-PORTAL
+portal = { source = "xdg-desktop-portal/portals", target = ".config/xdg-desktop-portal/portals.conf" }
