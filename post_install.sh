@@ -23,7 +23,7 @@ REQUIRED_PACKAGES=(
     foot tmux toml-bombadil neovim yazi darkman
     linux-zen linux-zen-headers ripgrep curl wget
     linux-firmware fzf jq zoxide fd wl-clipboard grim
-    slurp nm-applet NetworkManager wf-recorder mako dkms
+    slurp network-manager-applet networkmanager wf-recorder mako dkms
     base-devel grub fish
 )
 
