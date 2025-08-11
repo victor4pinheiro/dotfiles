@@ -15,7 +15,7 @@ PACMAN_PACKAGES=(
   steam wl-clip-persist imagemagick resvg poppler ffmpeg bitwarden lazygit apparmor
   thunderbird mise starship gnupg git bottom pavucontrol gamemode gamescope 7zip waybar
   gnome-keyring seahorse gdu ntfs-3g efibootmgr os-prober mtools openssh ly calibre elisa
-  qt5-wayland qt6-wayland realtime reflector rustup mold
+  qt5-wayland qt6-wayland realtime reflector rustup mold j4-dmenu-desktop
 )
 
 # Mandatory packages
