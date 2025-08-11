@@ -1,27 +1,5 @@
 #!/bin/sh
 
-## Sway
-cp -rf $HOME/.config/sway  ./
-
-## Waybar
-cp -rf $HOME/.config/waybar  ./
-
-## Footer
-cp -rf $HOME/.config/foot  ./
-
-## Fish
-cp -rf $HOME/.config/fish  ./
-
-## Sway
-cp -rf $HOME/.config/udiskie  ./
-
-## Sway
-cp -rf $HOME/.config/yazi  ./
-
-## Tmux
-
-cp -rf $HOME/.tmux.conf  ./
-
 ## Environment
 
 cp -rf /etc/environment  ./
@@ -34,5 +12,5 @@ cp -rf /etc/makepkg.conf.d  ./
 cp -rf /etc/pacman.conf  ./
 
 ## Darkman
-cp -rf /usr/local/share/light-mode.d ./
-cp -rf /usr/local/share/dark-mode.d ./
+cp -rf /usr/local/share/light-mode.d ./darkman/
+cp -rf /usr/local/share/dark-mode.d ./darkman/
