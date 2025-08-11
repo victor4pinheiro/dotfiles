@@ -90,6 +90,8 @@ sudo chsh -s /usr/bin/fish $USER
 
 # Copy pictures to use as wallpaper
 cp -rf ./images/day.jpg ./images/night.jpg ~/
+sudo chmod +x /usr/local/share/dark-mode.d/*.sh
+sudo chmod +x /usr/local/share/light-mode.d/*.sh
 
 # Start sway
 
