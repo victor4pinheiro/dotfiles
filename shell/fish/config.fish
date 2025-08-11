@@ -7,6 +7,8 @@ if status --is-login
 	#	end
 end
 
+# Dotfiles
+alias dup="bombadil link"
 
 ## Alias
 alias ls="eza"
