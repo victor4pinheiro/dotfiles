@@ -30,7 +30,7 @@ YAY_PACKAGES=(
   vesktop proton-ge-custom-bin ntsync wl-gammarelay-rs
   ntsync-dkms ntsync-header brave-bin ripdrag-git 
   xdg-desktop-portal-termfilechooser-hunkyburrito-git selectdefaultapplication-fork-git apparmor.d-git
-  stremio suwayomi-server-preview-bin heroic-games-launcher-bin waybar-git
+  stremio suwayomi-server-preview-bin heroic-games-launcher-bin waybar-git libcava
 )
 
 # Installation
