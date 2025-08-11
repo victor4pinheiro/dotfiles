@@ -24,7 +24,7 @@ REQUIRED_PACKAGES=(
     linux-zen linux-zen-headers ripgrep curl wget
     linux-firmware fzf jq zoxide fd wl-clipboard grim
     slurp network-manager-applet networkmanager wf-recorder mako dkms
-    base-devel grub fish man-pages man-db texinfo
+    base-devel grub fish man-pages man-db texinfo ccache
 )
 
 YAY_PACKAGES=(
