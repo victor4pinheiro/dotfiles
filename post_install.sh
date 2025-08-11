@@ -38,7 +38,7 @@ YAY_PACKAGES=(
 #
 
 # Enable connetion to Internet
-sudo systemctl enable --now systemd-networkd.servic
+sudo systemctl enable --now systemd-networkd.service
 
 #Required Packages
 echo -e "${GREEN}📥 Installing required packages...${NC}"
