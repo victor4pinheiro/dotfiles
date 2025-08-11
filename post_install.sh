@@ -14,6 +14,7 @@ PACMAN_PACKAGES=(
   thunderbird mise starship gnupg git bottom pavucontrol gamemode gamescope 7zip cava
   gnome-keyring seahorse gdu ntfs-3g efibootmgr os-prober mtools openssh ly calibre elisa
   qt5-wayland qt6-wayland realtime reflector rustup mold j4-dmenu-desktop xdg-user-dirs less
+  swaybg
 )
 
 # Mandatory packages
