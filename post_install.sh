@@ -67,6 +67,7 @@ if [[ "$ans2" == "yes" ]]; then
 fi
 
 # Copying files to their location
+bombadil install
 bombadil link
 sudo cp -rf reflector.conf /etc/xdg/reflector/reflector.conf
 sudo cp -rf makepkg.conf makepkg.conf.d environment gamemode.ini /etc/
