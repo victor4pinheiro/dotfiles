@@ -15,7 +15,7 @@ PACMAN_PACKAGES=(
   steam wl-clip-persist imagemagick resvg poppler ffmpeg bitwarden lazygit apparmor
   thunderbird mise starship gnupg git bottom pavucontrol gamemode gamescope 7zip waybar
   gnome-keyring seahorse gdu ntfs-3g efibootmgr os-prober mtools openssh ly calibre elisa
-  qt5-wayland qt6-wayland realtime reflector rustup mold j4-dmenu-desktop xdg-user-dirs
+  qt5-wayland qt6-wayland realtime reflector rustup mold j4-dmenu-desktop xdg-user-dirs less
 )
 
 # Mandatory packages
@@ -24,7 +24,7 @@ REQUIRED_PACKAGES=(
     linux-zen linux-zen-headers ripgrep curl wget
     linux-firmware fzf jq zoxide fd wl-clipboard grim
     slurp network-manager-applet networkmanager wf-recorder mako dkms
-    base-devel grub fish
+    base-devel grub fish man-pages man-db texinfo
 )
 
 YAY_PACKAGES=(
