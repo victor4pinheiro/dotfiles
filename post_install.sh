@@ -15,7 +15,7 @@ PACMAN_PACKAGES=(
   steam wl-clip-persist imagemagick resvg poppler ffmpeg bitwarden lazygit apparmor
   thunderbird mise starship gnupg git bottom pavucontrol gamemode gamescope 7zip waybar
   gnome-keyring seahorse gdu ntfs-3g efibootmgr os-prober mtools openssh ly calibre elisa
-  qt5-wayland qt6-wayland realtime reflector rustup mold j4-dmenu-desktop
+  qt5-wayland qt6-wayland realtime reflector rustup mold j4-dmenu-desktop xdg-user-dirs
 )
 
 # Mandatory packages
@@ -83,6 +83,9 @@ sudo systemctl enable --now reflector.service
 
 # Add user to groups
 sudo usermod -aG gamemode,realtime,audio,video,wheel,suwayomi-server $USER
+
+# Create default XDG directories
+xdg-user-dirs-update
 
 # Change default shell to fish
 sudo chsh -s /usr/bin/fish $USER
