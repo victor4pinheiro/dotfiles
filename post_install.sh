@@ -5,8 +5,6 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m'
 
-REPO_URL_NVIM="https://github.com/ahmad9059/nvim"
-
 # Pacman
 PACMAN_PACKAGES=(
   eza sway bemenu-wayland telegram-desktop 
@@ -91,7 +89,7 @@ xdg-user-dirs-update
 sudo chsh -s /usr/bin/fish $USER
 
 # Copy pictures to use as wallpaper
-cp -rf ./images/day.jpg ./images/night.jpg ~/Pictures/
+cp -rf ./images/day.jpg ./images/night.jpg ~/
 
 # Start sway
 
