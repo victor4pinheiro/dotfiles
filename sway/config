@@ -229,10 +229,10 @@ bindsym $mod+r mode "resize"
     bindsym XF86AudioStop exec playerctl stop
 
     # Special keys to take a screenshot with grim
-    set $ps1 Print
-    set $ps2 Control+Print
-    set $ps3 Alt+Print
-    set $ps4 Alt+Control+Print
+    set $ps1 print
+    set $ps2 control+print
+    set $ps3 alt+print
+    set $ps4 alt+control+print
     set $psf $(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").jpg
 
     # Record screen
