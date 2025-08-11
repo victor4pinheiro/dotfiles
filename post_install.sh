@@ -11,7 +11,7 @@ REPO_URL_NVIM="https://github.com/ahmad9059/nvim"
 PACMAN_PACKAGES=(
   eza sway bemenu-wayland telegram-desktop 
   firefox qbittorrent udiskie protonmail-bridge proton-vpn-gtk-app 
-  noto-fonts-emoji noto-fonts noto-fonts-cjk noto-fonts-extra ttf-noto-font-nerd ttf-jetbrains-mono
+  noto-fonts-emoji noto-fonts noto-fonts-cjk noto-fonts-extra ttf-noto-nerd ttf-jetbrains-mono
   steam wl-clip-persist imagemagick resvg poppler ffmpeg bitwarden lazygit apparmor
   thunderbird mise starship gnupg git bottom pavucontrol gamemode gamescope 7zip waybar
   gnome-keyring seahorse gdu ntfs-3g efibootmgr os-prober mtools openssh ly calibre elisa
@@ -42,14 +42,14 @@ sudo systemctl enable --now systemd-networkd.service
 
 #Required Packages
 echo -e "${GREEN}📥 Installing required packages...${NC}"
-sudo pacman -Sy --noconfirm --needed "${REQUIRED_PACKAGES[@]}"
+sudo pacman -Syu --noconfirm --needed "${REQUIRED_PACKAGES[@]}"
 
 # Ask to install pacman packages
 echo -e "\n${YELLOW}📦 Do you want to install the following pacman packages?${NC}"
 echo "${PACMAN_PACKAGES[@]}"
 read -rp "Type 'yes/no' to continue: " ans1
 if [[ "$ans1" == "yes" ]]; then
-  sudo pacman -Sy --needed "${PACMAN_PACKAGES[@]}"
+  sudo pacman -Syu --needed "${PACMAN_PACKAGES[@]}"
 fi
 
 # Install yay
