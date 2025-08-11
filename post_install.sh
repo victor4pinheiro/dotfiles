@@ -78,6 +78,7 @@ sudo cp -rf ./darkman/* /usr/local/share/
 systemctl --user restart xdg-desktop-portal.service
 sudo systemctl enable --now NetworkManager.service
 sudo systemctl enable --now reflector.service
+systemctl enable --user --now darkman.service
 
 # Add user to groups
 sudo usermod -aG gamemode,realtime,audio,video,wheel,suwayomi-server $USER
