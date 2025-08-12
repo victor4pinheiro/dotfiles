@@ -30,7 +30,7 @@ YAY_PACKAGES=(
   vesktop proton-ge-custom-bin ntsync wl-gammarelay-rs
   ntsync-dkms ntsync-header brave-bin ripdrag-git 
   xdg-desktop-portal-termfilechooser-hunkyburrito-git selectdefaultapplication-fork-git apparmor.d-git
-  stremio suwayomi-server-preview-bin heroic-games-launcher-bin waybar-git libcava
+  jackett-bin jackett-bin suwayomi-server-preview-bin heroic-games-launcher-bin waybar-git libcava
 )
 
 # Installation
@@ -100,6 +100,7 @@ sudo chmod +x /usr/local/share/light-mode.d/*.sh
 echo "To start your new system, you need to configure:"
 echo "-AppArmor: Add the modules to GRUB config and reboot."
 echo "-Firefox: Set firefox to use yazi."
+echo "-Jackett and Flare: Configure Flare API Url in Jackett and start services of both."
 echo "Don't worry. You can start to configure after you start SwayWM".
 echo "To start SwayWM, execute:"
 echo "sudo systemctl enable --now ly.service"
