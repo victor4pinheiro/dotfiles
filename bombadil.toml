@@ -38,3 +38,6 @@ portal = { source = "xdg-desktop-portal/portals", target = ".config/xdg-desktop-
 
 # Editors
 nvim = { source = "editors/nvim", target = ".config/nvim" }
+
+# Video 
+mpv = { source = "video/mpv", target = ".config/mpv" }
