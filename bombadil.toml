@@ -22,6 +22,7 @@ fish = { source = "shell/fish", target = ".config/fish" }
 sway = { source = "wayland/sway", target = ".config/sway" }
 waybar = { source = "wayland/waybar", target = ".config/waybar" }
 mako = { source = "wayland/mako", target = ".config/mako" }
+electron = { source = "wayland/electron", target = ".config/electron-flags.conf" }
 
 # Multiplexer
 tmux = { source = "multiplexer/tmux", target = ".tmux.conf" }
