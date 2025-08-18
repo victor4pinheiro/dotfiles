@@ -23,14 +23,15 @@ REQUIRED_PACKAGES=(
     linux-zen linux-zen-headers ripgrep curl wget
     linux-firmware fzf jq zoxide fd wl-clipboard grim
     slurp network-manager-applet networkmanager wf-recorder mako dkms
-    base-devel grub fish man-pages man-db texinfo ccache keychain
+    base-devel grub fish man-pages man-db texinfo ccache keychain openssh
+    mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
 )
 
 YAY_PACKAGES=(
   vesktop proton-ge-custom-bin ntsync wl-gammarelay-rs
   ntsync-dkms ntsync-header brave-bin ripdrag-git 
   xdg-desktop-portal-termfilechooser-hunkyburrito-git selectdefaultapplication-fork-git apparmor.d-git
-  jackett-bin jackett-bin suwayomi-server-preview-bin heroic-games-launcher-bin waybar-git libcava
+  suwayomi-server-preview-bin heroic-games-launcher-bin waybar-git libcava jackett-bin jackett-bin
 )
 
 # Installation
