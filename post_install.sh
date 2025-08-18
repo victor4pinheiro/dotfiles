@@ -31,7 +31,7 @@ YAY_PACKAGES=(
   vesktop proton-ge-custom-bin ntsync wl-gammarelay-rs
   ntsync-dkms ntsync-header brave-bin ripdrag-git 
   xdg-desktop-portal-termfilechooser-hunkyburrito-git selectdefaultapplication-fork-git apparmor.d-git
-  suwayomi-server-preview-bin heroic-games-launcher-bin waybar-git libcava jackett-bin jackett-bin
+  suwayomi-server-preview-bin heroic-games-launcher-bin waybar-git libcava
 )
 
 # Installation
@@ -81,6 +81,7 @@ systemctl --user restart xdg-desktop-portal.service
 sudo systemctl enable --now NetworkManager.service
 sudo systemctl enable --now reflector.service
 systemctl enable --user --now darkman.service
+systemctl --user restart xdg-desktop-portal-termfilechooser.service
 
 # Add user to groups
 sudo usermod -aG gamemode,realtime,audio,video,wheel,suwayomi-server $USER
@@ -101,7 +102,8 @@ sudo chmod +x /usr/local/share/light-mode.d/*.sh
 echo "To start your new system, you need to configure:"
 echo "-AppArmor: Add the modules to GRUB config and reboot."
 echo "-Firefox: Set firefox to use yazi."
-echo "-Jackett and Flare: Configure Flare API Url in Jackett and start services of both."
+echo "-Movies: You know what to do. Jellyfinn + *ARR."
+echo "-Mangas: Import previous save of mangas".
 echo "Don't worry. You can start to configure after you start SwayWM".
 echo "To start SwayWM, execute:"
 echo "sudo systemctl enable --now ly.service"
