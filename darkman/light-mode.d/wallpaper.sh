@@ -1,3 +1,3 @@
 #!/bin/sh
 
-swaymsg output "*" bg $HOME/Pictures/day.jpg fill
+swaymsg output "*" bg $HOME/day.jpg fill
