@@ -6,29 +6,12 @@
                 "position": "top",
                 "modules-left": [ "custom/logo", "sway/workspaces" ],
                 "modules-center": [ "clock" ],
-                "modules-right": ["cava", "wireplumber", "cpu", "memory", "network", "temperature", "tray"],
-                "wlr/taskbar": {
-                        "format": "{icon}",
-                        "icon-size": 14,
-                        "icon-theme": "Numix-Circle",
-                        "tooltip-format": "{title}",
-                        "on-click": "activate",
-                        "on-click-middle": "close",
-                },
+                "modules-right": ["wireplumber", "cpu", "memory", "network", "temperature", "tray"],
                 "wireplumber": {
                         "format": "{volume}% {icon}",
                         "format-muted": "",
                         "on-click": "pavucontrol",
                         "format-icons": ["", "", ""]
-                },
-                "cava": {
-                        "cava_config": "$HOME/.config/cava/config",
-                        "bars": 12,
-                        "source": "auto",
-                        "stereo": true,
-                        "reverse": false,
-                        "bar_delimiter": 0,
-                        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
                 },
                 "sway/workspaces": {
                         "disable-scroll": true,
