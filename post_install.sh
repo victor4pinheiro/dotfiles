@@ -11,10 +11,10 @@ PACMAN_PACKAGES=(
   firefox qbittorrent udiskie protonmail-bridge proton-vpn-gtk-app 
   noto-fonts-emoji noto-fonts noto-fonts-cjk noto-fonts-extra ttf-noto-nerd ttf-jetbrains-mono
   steam wl-clip-persist imagemagick resvg poppler ffmpeg bitwarden lazygit apparmor
-  thunderbird mise starship gnupg git bottom pavucontrol gamemode gamescope 7zip cava
+  thunderbird mise starship gnupg git bottom pavucontrol gamemode gamescope 7zip
   gnome-keyring seahorse gdu ntfs-3g efibootmgr os-prober mtools openssh ly calibre elisa
   qt5-wayland qt6-wayland realtime reflector rustup mold j4-dmenu-desktop xdg-user-dirs less
-  swaybg xfsprogs
+  swaybg xfsprogs waybar
 )
 
 # Mandatory packages
@@ -31,7 +31,7 @@ YAY_PACKAGES=(
   vesktop proton-ge-custom-bin ntsync wl-gammarelay-rs
   ntsync-dkms ntsync-header brave-bin ripdrag-git 
   xdg-desktop-portal-termfilechooser-hunkyburrito-git selectdefaultapplication-fork-git apparmor.d-git
-  suwayomi-server-preview-bin heroic-games-launcher-bin waybar-git libcava
+  suwayomi-server-preview-bin heroic-games-launcher-bin
 )
 
 # Installation
@@ -65,7 +65,7 @@ echo -e "\n${YELLOW}📦 Do you want to install the following AUR (yay) packages
 echo "${YAY_PACKAGES[@]}"
 read -rp "Type 'yes/no' to continue: " ans2
 if [[ "$ans2" == "yes" ]]; then
-    yay -Syu --needed --mflags "_with_cava=t" "${YAY_PACKAGES[@]}"
+    yay -Syu --needed "${YAY_PACKAGES[@]}"
 fi
 
 # Copying files to their location
