@@ -32,6 +32,7 @@ output * {
     adaptive_sync on
     allow_tearing yes
     max_render_time off
+    render_bit_depth 10
 }
 for_window [all] allow_tearing yes
 
