@@ -17,6 +17,10 @@ foot = { source = "terminals/foot", target = ".config/foot" }
 
 # Shell and configs
 fish = { source = "shell/fish", target = ".config/fish" }
+starship = { source = "shell/starship", target = ".config/starship.toml" }
+
+# CLI
+bottom = { source = "cli/bottom", target = ".config/bottom" }
 
 # Wayland
 sway = { source = "wayland/sway", target = ".config/sway" }
