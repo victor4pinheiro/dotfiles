@@ -6,12 +6,16 @@
                 "position": "top",
                 "modules-left": [ "custom/logo", "sway/workspaces" ],
                 "modules-center": [ "clock" ],
-                "modules-right": ["wireplumber", "cpu", "memory", "network", "temperature", "tray"],
+                "modules-right": ["sway/language", "wireplumber", "cpu", "memory", "network", "temperature", "tray"],
                 "wireplumber": {
                         "format": "{volume}% {icon}",
                         "format-muted": "",
                         "on-click": "pavucontrol",
                         "format-icons": ["", "", ""]
+                },
+                "sway/language": {
+                        "format": "{}",
+                        "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
                 },
                 "sway/workspaces": {
                         "disable-scroll": true,
