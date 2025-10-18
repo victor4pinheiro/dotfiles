@@ -290,5 +290,6 @@ exec_always {
 
 exec nm-applet
 exec systemctl restart --user darkman.service
+exec foot --server
 
 include /etc/sway/config.d/*
