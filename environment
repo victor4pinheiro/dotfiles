@@ -12,6 +12,10 @@ export QT_QPA_PLATFORM="wayland;xcb"
 export QT_WAYLAND_FORCE_DPI=physical
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 
+# GDK
+export GDK_DEBUG=portals
+export GTK_USE_PORTAL=1
+
 # Elementary/EFL
 export ECORE_EVAS_ENGINE=wayland_egl
 export ELM_ENGINE=wayland_egl
@@ -53,3 +57,6 @@ export BEMENU_BACKEND=wayland
 
 # Vulkan
 export MESA_SHADER_CACHE_MAX_SIZE=12G
+
+# File picker
+export TERMCMD="foot"
