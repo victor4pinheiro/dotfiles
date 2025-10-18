@@ -1,6 +1,6 @@
 local config = {
     transparent_background = true,
-    flavour = "mocha"
+    auto_integrations = true,
 }
 
 local plugin_name = "catppuccin/nvim"
