@@ -69,6 +69,7 @@ input "type:keyboard" {
     xkb_layout br,br(rus)
     xkb_variant abnt2
     xkb_model abnt2
+    xkb_options grp:alt_shift_toggle
 }
 
 ### Key bindings
