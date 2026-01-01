@@ -1,7 +1,7 @@
 [[plugin.deps]]
 use = "boydaihungst/restore"
-rev = "49c3e55"
-hash = ""
+rev = "6395e52"
+hash = "f107436db5d2cccccc11ab54bc97b761"
 
 [[plugin.deps]]
 use = "Reledia/glow"
@@ -45,8 +45,8 @@ hash = "2b0c33928986f126d5c5a4cac31a6b46"
 
 [[plugin.deps]]
 use = "ndtoan96/ouch"
-rev = "73b7842"
-hash = "1b2f25c9a34b98e596c65bd3e84c51ef"
+rev = "cfb9140"
+hash = "b5067143415bd2d46c0dfa57319ddcef"
 
 [flavor]
 deps = []

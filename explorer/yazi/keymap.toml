@@ -4,7 +4,7 @@ append_keymap = [
 ]
 
 prepend_keymap = [
-    { on = ["C"], run = "plugin ouch --args=zip", desc = "Compress with ouch" },
+    { on = ["C"], run = "plugin ouch", desc = "Compress with ouch" },
     { on = ["M", "m"], run = "plugin simple-mtpfs --args='select-then-mount --jump'", desc = "Select device to mount and jump to its mount point" },
     { on = ["M", "r"], run = "plugin simple-mtpfs --args=remount-current-cwd-device", desc = "Remount device under cwd" },
     { on = ["M", "u"], run = "plugin simple-mtpfs --args=select-then-unmount", desc = "Select device then unmount" },
